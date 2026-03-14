@@ -1,11 +1,11 @@
 import './App.css'
 import {BrowserRouter , Routes , Route} from "react-router-dom";
-import Home from "./Pages/Home.jsx";
-import Quiz from "./Pages/Quiz.jsx";
+import Home from "./pages/Home.jsx";
+import Quiz from "./pages/Quiz.jsx";
 import Navbar from "./components/NavBar.jsx";
-import Results from "./Pages/Results.jsx";
-import About from "./Pages/About.jsx";
-import Contact from "./Pages/Contact.jsx";
+import Results from "./ages/Results.jsx";
+import About from "./ages/About.jsx";
+import Contact from "./pages/Contact.jsx";
 
 const App = () => {
     return (
