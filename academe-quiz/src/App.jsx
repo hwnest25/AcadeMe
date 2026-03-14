@@ -10,7 +10,7 @@ import Contact from "./pages/Contact.jsx";
 const App = () => {
     return (
         <BrowserRouter>
-        <Navbar name={"ACADEME"}/>
+        <Navbar name={"AcadeMe"}/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Quiz" element={<Quiz />} />
