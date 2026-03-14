@@ -1,7 +1,7 @@
 // Pages/Quiz.jsx
-import QuestionCards from "../components/QuestionCards";
+import QuestionCards from "../components/QuestionCards.jsx";
 import { useState } from "react";
-import { questions } from "../data/questions";
+import { questions } from "../data/questions.js";
 import PersonaCalculator from "../utils/PersonaCalculator.jsx";
 import { useNavigate } from "react-router-dom";
 
