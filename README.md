@@ -1,4 +1,5 @@
 # AcadeMe 🎓
+![AcadeMe Cover](src/assets/AcadeMe_Cover_Slide_Image.jpg)
 
 Discover your study persona and unlock your learning potential.
 

@@ -51,12 +51,12 @@
 /* DESCRIPTION */
 
 .personas-card .persona-description{
-  color:var(--text-secondary);
-  line-height:1.75;
-  margin:0;
-  max-width:680px;
-  text-align:left;
-  font-size:1.05rem;
+  	color:var(--text-secondary);
+  	line-height:1.8;
+	margin:0 auto;  
+	max-width:640px;
+  	text-align:left;
+  	font-size:1.05rem;
 }
 
 /* TABLE */
@@ -68,15 +68,17 @@
 .personas-card .persona-table {
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 .personas-card .persona-table th {
-	text-align: left;
+	text-align: center;
 	padding: .9rem 1rem;
 	font-size: .95rem;
 	text-transform: uppercase;
 	letter-spacing: .5px;
-  border-bottom:2px solid rgba(99,102,241,.4);
+  	border-bottom:2px solid rgba(99,102,241,.4);
+
 
 	color: var(--primary-color);
 }
@@ -87,6 +89,10 @@
   border-bottom:1px solid rgba(255,255,255,.05);
   vertical-align:top;
   text-align:left;
+}
+.personas-card .persona-table th,
+.personas-card .persona-table td {
+	width: 50%;
 }
 
 .personas-card .persona-table tr:hover {
