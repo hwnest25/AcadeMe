@@ -2,8 +2,8 @@
 
 export const personas = {
     perfectionist: {
-        name: "Persistent Perfectionist 📋",
-        emoji: "📋",
+        name: "The Persistent Perfectionist",
+        emoji: "🧐",
         description:
             "You are a dedicated and thorough learner who leaves nothing to chance. Structure, preparation, and consistency are your strongest assets. You take pride in being ready and rarely walk into an exam feeling unprepared.",
         strengths: [
@@ -27,8 +27,8 @@ export const personas = {
     },
 
     lastminute: {
-        name: "Last-Minute Legend ⚡",
-        emoji: "⚡",
+        name: "The Last-Minute Legend",
+        emoji: "🫠",
         description:
             "You are a deadline-driven learner who comes alive under pressure. Urgency is your fuel and you have a talent for absorbing information fast when it counts. While your results are often surprisingly good, your journey to get there is usually stressful.",
         strengths: [
@@ -52,8 +52,8 @@ export const personas = {
     },
 
     sprinter: {
-        name: "Strategic Sprinter 🎯",
-        emoji: "🎯",
+        name: "Strategic Sprinter",
+        emoji: "⏱️",
         description:
             "You are a smart and efficient learner who focuses on what matters most. You instinctively apply the 80/20 rule — spending energy where it has the highest impact. You work lean, move fast, and usually hit your targets without wasting time.",
         strengths: [
@@ -77,7 +77,7 @@ export const personas = {
     },
 
     aiaddict: {
-        name: "AI Addict 🤖",
+        name: "AI Addict",
         emoji: "🤖",
         description:
             "You are a tech-forward learner who leverages modern tools to study smarter. You are comfortable using AI, apps, and digital resources to accelerate your learning. You are always up to date with the latest tools and know how to use them to your advantage.",
@@ -102,8 +102,8 @@ export const personas = {
     },
 
     einstein: {
-        name: "Effortless Einstein 🧠",
-        emoji: "🧠",
+        name: "Effortless Einstein",
+        emoji: "😏",
         description:
             "You are a naturally gifted learner who grasps concepts quickly and intuitively. You rarely need to grind through material because things just click for you. Your ability to understand deeply with minimal effort is a real strength — but it can sometimes lead to underestimating challenges.",
         strengths: [

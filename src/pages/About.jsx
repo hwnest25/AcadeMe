@@ -1,5 +1,5 @@
 // Pages/About.jsx
-import { personas } from "../data/personas.js";
+import { personas } from "../data/persona_details.js";
 
 const About = () => {
     const personaList = Object.values(personas);

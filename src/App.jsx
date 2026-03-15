@@ -6,6 +6,7 @@ import Navbar from "./components/NavBar.jsx";
 import Results from "./pages/Results.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import Personas from "./pages/Personas.jsx";
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path="/Quiz" element={<Quiz />} />
                 <Route path="/Results" element={<Results />} />
                 <Route path="/About" element={<About />} />
+                <Route path="/Personas" element={<Personas />} />
                 <Route path="/Contact" element={<Contact />} />
             </Routes>
         </BrowserRouter>
