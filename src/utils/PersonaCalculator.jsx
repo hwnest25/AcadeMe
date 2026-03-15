@@ -3,11 +3,13 @@
 const PersonaCalculator = (answers) => {
 
     const scores = {
-        perfectionist: 0,
-        lastminute: 0,
-        sprinter: 0,
-        aiaddict: 0,
-        einstein: 0,
+        persistent_perfectionist: 0,
+        lastminute_legend: 0,
+        strategic_sprinter: 0,
+        ai_addict: 0,
+        effortless_einstein: 0,
+        consistent_climber: 0,
+
     };
 
     answers.forEach((persona) => {

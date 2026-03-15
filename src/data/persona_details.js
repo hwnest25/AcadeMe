@@ -5,7 +5,7 @@ export const personas = {
         name: "The Persistent Perfectionist",
         emoji: "🧐",
         description:
-            "You are a dedicated and thorough learner who leaves nothing to chance. Structure, preparation, and consistency are your strongest assets. You take pride in being ready and rarely walk into an exam feeling unprepared.",
+            "You're a dedicated and thorough learner who leaves nothing to chance. Structure, preparation, and consistency are your strongest assets. You take pride in being ready and rarely walk into an exam feeling unprepared.",
         strengths: [
             "Highly organized and always prepared",
             "Consistent and disciplined study habits",
@@ -30,7 +30,7 @@ export const personas = {
         name: "The Last-Minute Legend",
         emoji: "🫠",
         description:
-            "You are a deadline-driven learner who comes alive under pressure. Urgency is your fuel and you have a talent for absorbing information fast when it counts. While your results are often surprisingly good, your journey to get there is usually stressful.",
+            "You're a deadline-driven learner who comes alive under pressure. Urgency is your fuel and you have a talent for absorbing information fast when it counts. While your results are often surprisingly good, your journey to get there is usually stressful.",
         strengths: [
             "Works extremely fast under pressure",
             "Strong ability to focus when it matters most",
@@ -52,10 +52,10 @@ export const personas = {
     },
 
     sprinter: {
-        name: "Strategic Sprinter",
+        name: "TheStrategic Sprinter",
         emoji: "⏱️",
         description:
-            "You are a smart and efficient learner who focuses on what matters most. You instinctively apply the 80/20 rule, spending energy where it has the highest impact. You work lean, move fast, and usually hit your targets without wasting time.",
+            "You're a smart and efficient learner who focuses on what matters most. You instinctively apply the 80/20 rule, spending energy where it has the highest impact. You work lean, move fast, and usually hit your targets without wasting time.",
         strengths: [
             "Highly efficient with time and energy",
             "Strong prioritization and planning skills",
@@ -77,10 +77,10 @@ export const personas = {
     },
 
     aiaddict: {
-        name: "AI Addict",
+        name: "The AI Addict",
         emoji: "🤖",
         description:
-            "You are a tech-forward learner who leverages modern tools to study smarter. You are comfortable using AI, apps, and digital resources to accelerate your learning. You are always up to date with the latest tools and know how to use them to your advantage.",
+            "You're a tech-forward learner who leverages modern tools to study smarter. You're at ease using AI and digital resources to accelerate your learning. You are always up to date with the latest tools and know how to use them to your advantage.",
         strengths: [
             "Resourceful and comfortable with technology",
             "Efficient at finding and processing information",
@@ -102,10 +102,10 @@ export const personas = {
     },
 
     einstein: {
-        name: "Effortless Einstein",
+        name: "The Effortless Einstein",
         emoji: "😏",
         description:
-            "You are a naturally gifted learner who grasps concepts quickly and intuitively. You rarely need to grind through material because things just click for you. Your ability to understand deeply with minimal effort is a real strength — but it can sometimes lead to underestimating challenges.",
+            "You 'e a naturally gifted learner who grasps concepts quickly and intuitively. You rarely need to grind through material because things just click for you. Your ability to understand deeply with minimal effort is a real strength — but it can sometimes lead to underestimating challenges.",
         strengths: [
             "Fast and intuitive understanding of new concepts",
             "Strong natural ability to connect ideas",
@@ -124,5 +124,29 @@ export const personas = {
             "Build basic study habits for when things get truly difficult",
             "Do not let past ease make you complacent on tough subjects",
         ],
+    },
+    consistentclimber: {
+    name: "The Consistent Climber",
+    emoji: "🧱",
+    description:
+        "You believe progress comes from steady effort over time. Instead of cramming or chasing perfection, you focus on showing up regularly and building your knowledge base brick by brick. Your approach may seem simple, but consistency is one of the most powerful ways to succeed.",
+    strengths: [
+        "Strong and reliable study routines",
+        "Builds knowledge steadily over time",
+        "Low stress approach to exams and deadlines",
+        "Consistent progress across subjects",
+    ],
+    challenges: [
+        "May struggle when sudden pressure is required",
+        "Can rely too heavily on routine without adapting",
+        "Sometimes progresses slower than more intense approaches",
+        "May hesitate to try new study strategies",
+    ],
+    tips: [
+        "Combine your routine with active recall techniques",
+        "Occasionally challenge yourself with timed practice tests",
+        "Experiment with new study methods to accelerate progress",
+        "Track your progress to stay motivated over the long term",
+    ],
     },
 };
