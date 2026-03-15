@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <div className="home-card">
-                <div className="home-emoji">🎯</div>
+                <div className="home-emoji">🔍</div>
                 <h1 className="home-title">Discover your Study Persona</h1>
                 <p className="home-subtitle">
                     Take the quiz to identify your learner profile and get tips to boost your academic success!

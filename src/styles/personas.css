@@ -126,6 +126,7 @@
 
 .persona-tips li {
   margin-bottom:.5rem;
+  margin-left: 1rem;
   color:var(--text-secondary);
   line-height:1.6;
   text-align:left;

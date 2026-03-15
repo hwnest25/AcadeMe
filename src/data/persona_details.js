@@ -52,7 +52,7 @@ export const personas = {
     },
 
     sprinter: {
-        name: "TheStrategic Sprinter",
+        name: "The Strategic Sprinter",
         emoji: "⏱️",
         description:
             "You're a smart and efficient learner who focuses on what matters most. You instinctively apply the 80/20 rule, spending energy where it has the highest impact. You work lean, move fast, and usually hit your targets without wasting time.",
