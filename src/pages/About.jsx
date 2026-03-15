@@ -31,7 +31,7 @@ const About = () => {
 
           <p className="about-text">
             By answering 10 carefully crafted questions you'll discover which
-            of five distinct personas best matches your learning style.
+            of six distinct personas best matches your learning style.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ const About = () => {
         <div className="about-section">
 
           <h2 className="section-heading">
-            Meet the Five Personas
+            Meet the Six Personas
           </h2>
 
           <div className="personas-grid">
