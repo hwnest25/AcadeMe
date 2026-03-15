@@ -2,7 +2,7 @@
 
 > Discover your study persona and unlock your learning potential.
 
-ACADEME is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of five unique study personas — each with personalized strengths, challenges, and actionable tips to help you study smarter.
+ACADEME is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of five unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
 
 ---
 
@@ -44,21 +44,42 @@ ACADEME is an interactive web application that helps students understand their l
 ## Project Structure
 
 ```
-src/
- ├── pages/
- │    ├── Home.jsx          # Welcome page
- │    ├── Quiz.jsx          # Quiz logic and question display
- │    └── Results.jsx       # Persona result and recommendations
- ├── components/
- │    ├── Navbar.jsx        # Navigation bar
- │    ├── QuestionCards.jsx # Displays each question and options
- │    └── PersonaCard.jsx   # Displays the result persona
- ├── data/
- │    ├── questions.js      # All quiz questions and answer mappings
- │    └── personas.js       # Persona descriptions, strengths and tips
- ├── utils/
- │    └── PersonaCalculator.js  # Scoring logic and persona calculation
- └── App.jsx                # Routes and app structure
+└── AcadeMe
+    ├── README.md
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+    │   ├── favicon.svg
+    │   └── icons.svg
+    ├── src
+    │   ├── App.css
+    │   ├── App.jsx
+    │   ├── assets
+    │   │   ├── hero.png
+    │   │   ├── react.svg
+    │   │   └── vite.svg
+    │   ├── components
+    │   │   ├── Form.jsx
+    │   │   ├── Navbar.jsx
+    │   │   ├── PersonaResultCard.jsx
+    │   │   └── QuestionCards.jsx
+    │   ├── data
+    │   │   ├── personas.js
+    │   │   └── questions.js
+    │   ├── index.css
+    │   ├── main.jsx
+    │   ├── pages
+    │   │   ├── About.jsx
+    │   │   ├── Contact.jsx
+    │   │   ├── Home.jsx
+    │   │   ├── Quiz.jsx
+    │   │   └── Results.jsx
+    │   └── utils
+    │       └── PersonaCalculator.jsx
+    └── vite.config.js
+
 ```
 
 ---
@@ -73,10 +94,10 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/MouradOur/ACADEMEQuizApp.git
+git clone https://github.com/hwnest25/AcadeMe
 
 # Navigate into the project folder
-cd ACADEMEQuizApp
+cd AcadeMe
 
 # Install dependencies
 npm install
@@ -85,7 +106,7 @@ npm install
 npm run dev
 ```
 
-Then open your browser at `http://localhost:5173`
+Then open your browser at the live localhost link in the terminal.
 
 ---
 
@@ -100,9 +121,9 @@ Then open your browser at `http://localhost:5173`
 
 ---
 
-## Author
+## Authors
 
-Made by [MouradOur](https://github.com/MouradOur) , [hwnest25](https://github.com/hwnest25/)
+Made by [MouradOur](https://github.com/MouradOur) , [hwnest25](https://github.com/hwnest25/) , and [codeedope](https://github.com/codedeedope) 
 
 ---
 
