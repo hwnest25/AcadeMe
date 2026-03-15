@@ -50,12 +50,13 @@
 
 /* DESCRIPTION */
 
-.personas-card .persona-description {
+.personas-card .persona-description{
   color:var(--text-secondary);
-  line-height:1.7;
+  line-height:1.75;
   margin:0;
   max-width:680px;
   text-align:left;
+  font-size:1.05rem;
 }
 
 /* TABLE */
@@ -104,9 +105,13 @@
 
 /* TIPS */
 
-.persona-tips {
-  max-width:640px;
-  margin:0 auto 2rem auto;
+.persona-tips-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:1.6rem;
+  border-radius:12px;
+  margin-bottom:1.6rem;
+  box-shadow:0 3px 12px rgba(0,0,0,0.2);
 }
 
 .persona-tips-card h3 {
@@ -185,4 +190,8 @@
 		font-size: 1.8rem;
 	}
 
+    .persona-table td, .persona-table th{
+    font-size:.9rem;
+
+    }
 }

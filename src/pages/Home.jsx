@@ -29,10 +29,10 @@ const Home = () => {
                     </div>
                 </div>
                 <button className="start-button" onClick={() => navigate("/quiz")}>
-                    Start Quiz
+                    Take the Quiz
                     <span className="button-arrow">→</span>
                 </button>
-                <p className="home-note">Takes about 2 minutes</p>
+                <p className="home-note">Duration: ~2 minutes</p>
             </div>
         </div>
     );

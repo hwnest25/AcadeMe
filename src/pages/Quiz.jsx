@@ -36,8 +36,8 @@ const Quiz = () => {
                         <span className="question-counter">
                             Question {currentIndex + 1} of {questions.length}
                         </span>
-                        <span className="progress-percentage">{Math.round(progress)}%</span>
                     </div>
+                        <span className="progress-percentage">{Math.round(progress)}%</span>
                     <div className="progress-bar-container">
                         <div
                             className="progress-bar-fill"
