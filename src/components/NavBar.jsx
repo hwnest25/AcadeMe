@@ -30,7 +30,7 @@ const NavBar = ({ name }) => {
                     </li>
                     <li>
                         <Link
-                            to="pPersonas"
+                            to="/personas"
                             className={`nav-link ${location.pathname === "/personas" ? "active" : ""}`}
                         >
                             Explore the Personas
