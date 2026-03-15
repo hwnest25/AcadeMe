@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { personas } from "../data/persona_details";
 import "../styles/personas.css";
 
 const Personas = () => {
   const personaList = Object.values(personas);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+    });
+  }, [index]);
 
   const nextPersona = () => {
     setIndex((prev) => (prev + 1) % personaList.length);
