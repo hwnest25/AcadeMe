@@ -50,6 +50,27 @@
 | HTML5 & CSS3 | Structure and styling |
 
 ---
+## Wireframes
+
+<details>
+<summary>View initial design wireframes</summary>
+
+### Home Page
+![Home Wireframe](src/assets/wireframes/home_wireframe.jpeg)
+
+### Quiz Page
+![Quiz Wireframe](src/assets/wireframes/quiz_wireframe.jpeg)
+
+### Results Page
+![Results Wireframe](src/assets/wireframes/results_wireframe.jpeg)
+
+### About Page
+![About Wireframe](src/assets/wireframes/about_wireframe.jpeg)
+
+### Contact Page
+![Contact Wireframe](src/assets/wireframes/contact_wireframe.jpeg)
+
+</details>
 
 ## Project Structure
 <details>
