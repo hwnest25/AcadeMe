@@ -14,9 +14,9 @@ const PersonaCalculator = (answers) => {
         scores[persona]++;
     });
 
-    return Object.keys(scores).reduce((a, b) =>
-        scores[a] > scores[b] ? a : b
-    );
+    return Object.keys(scores).reduce((highest, current) => {
+  return scores[current] > scores[highest] ? current : highest;
+});
 
 };
 
