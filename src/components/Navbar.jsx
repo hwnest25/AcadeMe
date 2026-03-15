@@ -22,24 +22,24 @@ const NavBar = ({ name }) => {
                     </li>
                     <li>
                         <Link
-                            to="/About"
-                            className={`nav-link ${location.pathname === "/About" ? "active" : ""}`}
+                            to="/about"
+                            className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}
                         >
                             About
                         </Link>
                     </li>
                     <li>
                         <Link
-                            to="/Personas"
-                            className={`nav-link ${location.pathname === "/Personas" ? "active" : ""}`}
+                            to="pPersonas"
+                            className={`nav-link ${location.pathname === "/personas" ? "active" : ""}`}
                         >
                             Explore the Personas
                         </Link>
                     </li>
                     <li>
                         <Link
-                            to="/Contact"
-                            className={`nav-link ${location.pathname === "/Contact" ? "active" : ""}`}
+                            to="/contact"
+                            className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`}
                         >
                             Contact
                         </Link>

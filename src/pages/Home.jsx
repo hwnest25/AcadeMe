@@ -20,7 +20,7 @@ const Home = () => {
                     </div>
                     <div className="feature-item">
                         <span className="feature-icon">🧠</span>
-                        <span className="feature-text">5 Personas</span>
+                        <span className="feature-text">6 Personas</span>
                     </div>
                     <div className="feature-item">
                         <span className="feature-icon">💡</span>
