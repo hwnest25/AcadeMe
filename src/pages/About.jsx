@@ -9,14 +9,14 @@ const About = () => {
             <div className="about-card">
                 <div className="about-header">
                     <div className="about-icon">📚</div>
-                    <h1 className="about-title">About ACADEME Quiz</h1>
+                    <h1 className="about-title">About AcadeMe</h1>
                     <p className="about-tagline">Discover Your Learning Style</p>
                 </div>
 
                 <div className="about-section">
                     <h2 className="section-heading">What is This Quiz?</h2>
                     <p className="about-text">
-                        The ACADEME Study Persona Quiz is an interactive assessment designed
+                        The AcadeMe Study Persona Quiz is an interactive assessment designed
                         to help students understand their unique learning patterns and study habits.
                         By answering 10 carefully crafted questions about your study approach,
                         you'll discover which of five distinct personas best matches your learning style.
