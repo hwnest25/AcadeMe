@@ -1,21 +1,22 @@
 # AcadeMe 🎓
 ![AcadeMe Cover](src/assets/AcadeMe_Cover_Slide_Image.jpg)
+## What is your Study Persona?
 
-Discover your study persona and unlock your learning potential.
+**AcadeMe** is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of six unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
 
-**AcadeMe** is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of five unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
-
+### Take the assessment today to discover your study persona and maximize your learning potential.
 ---
 
 ##  Study Personas
 
 | Persona | Description |
 |---|---|
-|  Persistent Perfectionist | Organized, thorough, and always prepared |
-|  Last-Minute Legend | Deadline-driven and thrives under pressure |
-|  Strategic Sprinter | Efficient, goal-oriented, and focused |
-|  AI Addict | Tech-forward and leverages digital tools |
-|  Effortless Einstein | Intuitive, fast learner with natural understanding |
+| 🧐 **Persistent Perfectionist** | Organized, thorough, and always prepared |
+| 🫠 **Last-Minute Legend** | Deadline-driven and thrives under pressure |
+| ⏱️ **Strategic Sprinter** | Efficient, goal-oriented, and focused |
+| 🤖 **AI Addict** | Tech-forward and leverages digital tools |
+| 😏 **Effortless Einstein** | Intuitive, fast learner with natural understanding |
+| 🧱 **Consistent Climber** | Steady, disciplined learner who improves through consistent effort |
 
 ---
 
