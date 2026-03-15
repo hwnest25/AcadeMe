@@ -4,7 +4,7 @@
 
 **AcadeMe** is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of six unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
 
-### Take the assessment today to discover your study persona and maximize your learning potential.
+#### Take the assessment today to discover your study persona and maximize your learning potential.
 ---
 
 ##  Study Personas
@@ -54,41 +54,46 @@
 ## Project Structure
 
 ```
-└── AcadeMe
-    ├── README.md
-    ├── eslint.config.js
-    ├── index.html
-    ├── package-lock.json
-    ├── package.json
-    ├── public
-    │   ├── favicon.svg
-    │   └── icons.svg
-    ├── src
-    │   ├── App.css
-    │   ├── App.jsx
-    │   ├── assets
-    │   │   ├── hero.png
-    │   │   ├── react.svg
-    │   │   └── vite.svg
-    │   ├── components
-    │   │   ├── Form.jsx
-    │   │   ├── Navbar.jsx
-    │   │   ├── PersonaResultCard.jsx
-    │   │   └── QuestionCards.jsx
-    │   ├── data
-    │   │   ├── personas.js
-    │   │   └── questions.js
-    │   ├── index.css
-    │   ├── main.jsx
-    │   ├── pages
-    │   │   ├── About.jsx
-    │   │   ├── Contact.jsx
-    │   │   ├── Home.jsx
-    │   │   ├── Quiz.jsx
-    │   │   └── Results.jsx
-    │   └── utils
-    │       └── PersonaCalculator.jsx
-    └── vite.config.js
+.
+├── README.md
+├── public
+│   ├── favicon.svg
+│   └── icons.svg
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   ├── persona_illustrations
+│   │   └── wireframes
+│   ├── components
+│   │   ├── Form.jsx
+│   │   ├── NavBar.jsx
+│   │   ├── PersonaPreviewCard.jsx
+│   │   ├── PersonaResultCard.jsx
+│   │   ├── QuestionCards.jsx
+│   │   └── StepsSection.jsx
+│   ├── data
+│   │   ├── persona_details.js
+│   │   └── questions.js
+│   ├── index.css
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Home.jsx
+│   │   ├── Personas.jsx
+│   │   ├── Quiz.jsx
+│   │   └── Results.jsx
+│   ├── styles
+│   │   ├── about.css
+│   │   ├── contact.css
+│   │   ├── home.css
+│   │   ├── personas.css
+│   │   ├── quiz.css
+│   │   └── results.css
+│   └── utils
+│       └── PersonaCalculator.jsx
+└── vite.config.js
 
 ```
 
