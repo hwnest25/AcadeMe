@@ -1,8 +1,8 @@
-# ACADEME 🎓
+# AcadeMe 🎓
 
-> Discover your study persona and unlock your learning potential.
+Discover your study persona and unlock your learning potential.
 
-ACADEME is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of five unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
+**AcadeMe** is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of five unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
 
 ---
 
