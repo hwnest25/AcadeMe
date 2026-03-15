@@ -6,7 +6,20 @@ import "../styles/results.css";
 const Results = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const FinalPersona = personas[state?.persona || 'perfectionist'];
+    const personaKey = state?.persona;
+    const FinalPersona = personaKey ? personas[personaKey] : null;
+
+    console.log("Persona key:", state?.persona);
+    console.log("Personas object:", personas);
+
+    if (!FinalPersona) {
+        return (
+            <div className="results-container">
+            <p>Something went wrong. Please retake the quiz.</p>
+            <button onClick={() => navigate("/quiz")}>Retake Quiz</button>
+            </div>
+        );
+        }
 
     return (
         <div className="results-container">
@@ -65,7 +78,7 @@ const Results = () => {
                 </div>
 
                 <div className="results-actions">
-                    <button className="action-button primary" onClick={() => navigate("/Quiz")}>
+                    <button className="action-button primary" onClick={() => navigate("/quiz")}>
                         <span>🔄</span> Retake Quiz
                     </button>
                     <button className="action-button secondary" onClick={() => navigate("/")}>

@@ -1,5 +1,5 @@
 export const personas = {
-    perfectionist: {
+    persistent_perfectionist: {
         name: "The Persistent Perfectionist",
         emoji: "🧐",
         description:
@@ -24,7 +24,7 @@ export const personas = {
         ],
     },
 
-    lastminute: {
+    lastminute_legend: {
         name: "The Last-Minute Legend",
         emoji: "🫠",
         description:
@@ -49,7 +49,7 @@ export const personas = {
         ],
     },
 
-    sprinter: {
+    strategic_sprinter: {
         name: "The Strategic Sprinter",
         emoji: "⏱️",
         description:
@@ -74,7 +74,7 @@ export const personas = {
         ],
     },
 
-    aiaddict: {
+    ai_addict: {
         name: "The AI Addict",
         emoji: "🤖",
         description:
@@ -99,7 +99,7 @@ export const personas = {
         ],
     },
 
-    einstein: {
+    effortless_einstein: {
         name: "The Effortless Einstein",
         emoji: "😏",
         description:
@@ -124,7 +124,7 @@ export const personas = {
         ],
     },
 
-    consistentclimber: {
+    consistent_climber: {
         name: "The Consistent Climber",
         emoji: "🧱",
         description:

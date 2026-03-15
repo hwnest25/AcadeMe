@@ -1,4 +1,4 @@
-# AcadeMe 🎓
+# AcadeMe - Your learner lens, decoded.
 ![AcadeMe Cover](src/assets/AcadeMe_Cover_Slide_Image.jpg)
 ## What is your Study Persona?
 
@@ -53,7 +53,7 @@
 ## Wireframes
 
 <details>
-<summary>View initial design wireframes</summary>
+<summary>Click to expand and view the initial design wireframes</summary>
 
 ### Home Page
 ![Home Wireframe](src/assets/wireframes/home_wireframe.jpeg)

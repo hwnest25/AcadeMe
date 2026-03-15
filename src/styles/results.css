@@ -127,11 +127,11 @@
 }
 
 .challenges-list li {
-  border-left-color: var(--accent);
+  border-left-color: rgb(142, 46, 46);
 }
 
 .challenges-list .list-bullet {
-  color: var(--accent);
+  color: rgb(142, 46, 46);
 }
 
 .tips-list li {
