@@ -2,7 +2,7 @@ import { personas } from "../data/persona_details"
 import PersonaPreviewCard from "../components/PersonaPreviewCard"
 import StepsSection from "../components/StepsSection"
 import { Link } from "react-router-dom"
-import "../styles/About.css"
+import "../styles/about.css"
 
 const About = () => {
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { personas } from "../data/persona_details";
-import "../styles/Personas.css";
+import "../styles/personas.css";
 
 const Personas = () => {
   const personaList = Object.values(personas);

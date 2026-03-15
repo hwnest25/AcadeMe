@@ -1,7 +1,7 @@
 // Pages/Results.jsx
 import { useLocation, useNavigate } from "react-router-dom";
 import { personas } from "../data/persona_details.js";
-import "../styles/Results.css";
+import "../styles/results.css";
 
 const Results = () => {
     const { state } = useLocation();
