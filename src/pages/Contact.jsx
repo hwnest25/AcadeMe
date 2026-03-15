@@ -1,5 +1,6 @@
 // Pages/Contact.jsx
 import Form from "../components/Form.jsx";
+import "../styles/Contact.css";
 
 const Contact = () => (
     <div className="contact-container">

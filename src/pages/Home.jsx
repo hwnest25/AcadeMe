@@ -1,5 +1,6 @@
 // Pages/Home.jsx
 import { useNavigate } from "react-router-dom";
+import "../styles/Home.css";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Home = () => {
                         <span className="feature-text">Expert Tips</span>
                     </div>
                 </div>
-                <button className="start-button" onClick={() => navigate("/Quiz")}>
+                <button className="start-button" onClick={() => navigate("/quiz")}>
                     Start Quiz
                     <span className="button-arrow">→</span>
                 </button>

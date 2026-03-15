@@ -4,6 +4,7 @@ import { useState } from "react";
 import { questions } from "../data/questions.js";
 import PersonaCalculator from "../utils/PersonaCalculator.jsx";
 import { useNavigate } from "react-router-dom";
+import "../styles/Quiz.css";
 
 const Quiz = () => {
     const navigate = useNavigate();

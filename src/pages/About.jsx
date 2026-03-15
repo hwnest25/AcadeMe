@@ -1,5 +1,6 @@
 // Pages/About.jsx
 import { personas } from "../data/persona_details.js";
+import "../styles/About.css"; 
 
 const About = () => {
     const personaList = Object.values(personas);
@@ -74,7 +75,7 @@ const About = () => {
                         <div className="step-item">
                             <div className="step-number">3</div>
                             <div className="step-content">
-                                <h4>Improve Your Study</h4>
+                                <h4>Improve Your Study Habits</h4>
                                 <p>Apply personalized tips to enhance your learning</p>
                             </div>
                         </div>
