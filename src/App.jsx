@@ -11,7 +11,7 @@ import Personas from "./pages/Personas.jsx";
 const App = () => {
     return (
         <BrowserRouter>
-        <Navbar name={"AcadeMe"}/>
+        <NavBar name={"AcadeMe"}/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/quiz" element={<Quiz />} />
