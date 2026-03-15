@@ -9,10 +9,9 @@ const Home = () => {
         <div className="home-container">
             <div className="home-card">
                 <div className="home-emoji">🎯</div>
-                <h1 className="home-title">Discover Your Study Persona</h1>
+                <h1 className="home-title">Discover your Study Persona</h1>
                 <p className="home-subtitle">
-                    Take our interactive quiz to find out what type of learner you are and get
-                    personalized tips to boost your academic success!
+                    Take the quiz to identify your learner profile and get tips to boost your academic success!
                 </p>
                 <div className="home-features">
                     <div className="feature-item">
