@@ -1,7 +1,7 @@
 // components/NavBar.jsx
 import { Link, useLocation } from "react-router-dom";
 
-const Navbar = ({ name }) => {
+const NavBar = ({ name }) => {
     const location = useLocation();
 
     return (
@@ -50,4 +50,4 @@ const Navbar = ({ name }) => {
     );
 };
 
-export default Navbar;
+export default NavBar;
