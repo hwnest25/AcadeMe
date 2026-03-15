@@ -77,7 +77,8 @@
 	font-size: .95rem;
 	text-transform: uppercase;
 	letter-spacing: .5px;
-  	border-bottom:2px solid rgba(99,102,241,.4);
+  	/* border-bottom:2px solid rgba(99,102,241,.4); */
+	border-bottom:2px solid rgba(192,122,84,.35);
 
 
 	color: var(--primary-color);
@@ -106,7 +107,9 @@
 }
 
 .challenge-cell {
-	border-left: 4px solid var(--accent);
+	/* border-left: 4px solid var(--accent); */
+	border-left: 2px solid var(--accent);
+
 }
 
 /* TIPS */
