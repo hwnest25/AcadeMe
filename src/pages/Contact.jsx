@@ -9,8 +9,9 @@ const Contact = () => (
                 <div className="contact-icon">📧</div>
                 <h1 className="contact-title">Get in Touch</h1>
                 <p className="contact-subtitle">
-                    Have questions, feedback, or suggestions? We'd love to hear from you!
+                    Questions? Feedback? Suggestions?
                 </p>
+                <p className="contact-subtitle">We'd love to hear from you!</p>
             </div>
             <Form />
             <div className="contact-info">
@@ -18,21 +19,8 @@ const Contact = () => (
                     <span className="info-icon">🌐</span>
                     <div className="info-content">
                         <h4>Website</h4>
-                        <p>academe-quiz.com</p>
-                    </div>
-                </div>
-                <div className="info-item">
-                    <span className="info-icon">✉️</span>
-                    <div className="info-content">
-                        <h4>Email</h4>
-                        <p>support@academe-quiz.com</p>
-                    </div>
-                </div>
-                <div className="info-item">
-                    <span className="info-icon">⏰</span>
-                    <div className="info-content">
-                        <h4>Response Time</h4>
-                        <p>Within 24-48 hours</p>
+                        <p href="https://academe-quiz.vercel.app/">academe-quiz.vercel.app</p>
+                       
                     </div>
                 </div>
             </div>

@@ -62,14 +62,15 @@ const Form = () => {
             return;
         }
 
-        // Simulate form submission
+        // Simulates form submission
         setSubmitted(true);
 
         // Reset form after 3 seconds
         setTimeout(() => {
             setSubmitted(false);
             setFormData({
-                name: '',
+                firstName: '',
+                lastName: '',
                 email: '',
                 subject: '',
                 message: ''
@@ -79,20 +80,36 @@ const Form = () => {
 
     return (
         <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label htmlFor="name">
-                    Name <span className="required">*</span>
-                </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your full name"
-                    className={errors.name ? 'error' : ''}
-                />
-                {errors.name && <span className="error-message">{errors.name}</span>}
+            <div className="form-row">
+                <div className="form-group">
+                    <label htmlFor="firstName">
+                        First Name <span className="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="First name"
+                        className={errors.firstName ? 'error' : ''}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="lastName">
+                        Last Name <span className="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        placeholder="Last name"
+                        className={errors.lastName ? 'error' : ''}
+                    />
+                </div>
             </div>
 
             <div className="form-group">
@@ -121,7 +138,7 @@ const Form = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="What is this about?"
+                    placeholder="Why are you reaching out?"
                     className={errors.subject ? 'error' : ''}
                 />
                 {errors.subject && <span className="error-message">{errors.subject}</span>}
