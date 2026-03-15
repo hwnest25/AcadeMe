@@ -37,7 +37,7 @@
 }
 
 .home-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.75rem;
   margin-top: 0.5rem;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -82,13 +82,13 @@
 }
 
 .start-button {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(150deg, var(--primary-color), var(--secondary-color));
   color: white;
   border: none;
-  padding: 1.2rem 3.5rem;
-  font-size: 1.2rem;
+  padding: 0.7rem 1.8rem;  
+  font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -96,9 +96,13 @@
   box-shadow: var(--shadow);
 }
 
-.start-button:hover {
+/* .start-button:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-3px);
+} */
+ .start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .button-arrow {
