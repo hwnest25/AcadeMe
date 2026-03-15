@@ -98,9 +98,9 @@
 └── vite.config.js
 
 ```
+</details>
 
 ---
-
 ## Getting Started
 
 ### Prerequisites
