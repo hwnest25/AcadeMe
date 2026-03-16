@@ -122,6 +122,27 @@
 </details>
 
 ---
+
+## Accessibility Attributes
+<details>
+<summary>Click to expand</summary>
+
+Accessibility was considered throughout the development of this project to ensure the application is usable for a wide raging of users. According to the Web Content Accessibility Guidelines (WCAG) was considered throughout the development of this project to ensure the application is usable for a wide range of users.
+
+Key accessibility considerations include:
+
+- **Semantic HTML structure** using appropriate elements such as headings, lists, and buttons to support screen readers and assistive technologies.
+- **Keyboard accessible navigation**, allowing users to move through interactive elements such as quiz questions and buttons without requiring a mouse.
+- **Readable typography and spacing** to support comfortable reading and reduce visual fatigue.
+- **Consistent colour contrast** between text and background elements to improve readability.
+- **Clear UI feedback** for actions such as quiz progression and navigation.
+- **Responsive design**, ensuring the interface remains usable across different screen sizes and devices.
+
+These practices help create a more inclusive experience while following general web accessibility principles.
+
+
+
+
 ## Getting Started
 
 ### Prerequisites
