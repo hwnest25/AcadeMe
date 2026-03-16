@@ -5,12 +5,12 @@
 .personas-container {
 	display: flex;
 	justify-content: center;
-	padding: 2rem;
+	padding: clamp(1rem, 5vw, 2rem);
 }
 
 .personas-card {
 	background: var(--card-bg);
-	padding: 3rem;
+	padding: clamp(1.5rem, 8vw, 3rem);
 	border-radius: var(--border-radius);
 	max-width: 900px;
 	width: 100%;
@@ -21,20 +21,21 @@
    SUB CARDS
    ======================================== */
 
-.persona-subcard{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  padding:1.6rem;
-  border-radius:12px;
-  margin-bottom:1.6rem;
-  box-shadow:0 3px 12px rgba(0,0,0,0.2);
+.persona-subcard {
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 1.6rem;
+	border-radius: 12px;
+	margin-bottom: 1.6rem;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Persona Card Name */
 
 .personas-card .persona-name {
 	text-align: center;
-	font-size: 2.3rem;
+	/* Fluid font size: scales between 1.8rem and 2.3rem */
+	font-size: clamp(1.8rem, 6vw, 2.3rem);
 	font-weight: 700;
 	margin-bottom: .5rem;
 }
@@ -42,7 +43,8 @@
 /* EMOJI */
 
 .personas-card .persona-emoji {
-	font-size: 7rem;
+	/* Fluid emoji size: scales between 4rem and 7rem */
+	font-size: clamp(4rem, 15vw, 7rem);
 	text-align: center;
 	margin-bottom: 1.2rem;
 	animation: bounce 2s infinite;
@@ -50,25 +52,30 @@
 
 /* DESCRIPTION */
 
-.personas-card .persona-description{
-  	color:var(--text-secondary);
-  	line-height:1.8;
-	margin:0 auto;  
-	max-width:640px;
-  	text-align:left;
-  	font-size:1.05rem;
+.personas-card .persona-description {
+	color: var(--text-secondary);
+	line-height: 1.8;
+	margin: 0 auto;
+	max-width: 640px;
+	width: 100%;
+	/* Ensures it uses available space */
+	text-align: left;
+	font-size: 1.05rem;
 }
 
 /* TABLE */
 
 .persona-table-wrapper {
 	margin-bottom: 2.2rem;
+	overflow-x: hidden;
+	/* Prevents unwanted horizontal scroll */
 }
 
 .personas-card .persona-table {
 	width: 100%;
 	border-collapse: collapse;
-	table-layout: fixed;
+	/* Allow stacking logic in media queries */
+	table-layout: auto;
 }
 
 .personas-card .persona-table th {
@@ -77,20 +84,19 @@
 	font-size: .95rem;
 	text-transform: uppercase;
 	letter-spacing: .5px;
-  	/* border-bottom:2px solid rgba(99,102,241,.4); */
-	border-bottom:2px solid rgba(192,122,84,.35);
-
-
+	border-bottom: 2px solid rgba(192, 122, 84, .35);
 	color: var(--primary-color);
 }
 
 .personas-card .persona-table td {
-  padding:.9rem 1rem;
-  color:var(--text-secondary);
-  border-bottom:1px solid rgba(255,255,255,.05);
-  vertical-align:top;
-  text-align:left;
+	padding: .9rem 1rem;
+	color: var(--text-secondary);
+	border-bottom: 1px solid rgba(255, 255, 255, .05);
+	vertical-align: top;
+	text-align: left;
 }
+
+/* Desktop sizing */
 .personas-card .persona-table th,
 .personas-card .persona-table td {
 	width: 50%;
@@ -107,20 +113,18 @@
 }
 
 .challenge-cell {
-	/* border-left: 4px solid var(--accent); */
 	border-left: 2px solid var(--accent);
-
 }
 
 /* TIPS */
 
-.persona-tips-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  padding:1.6rem;
-  border-radius:12px;
-  margin-bottom:1.6rem;
-  box-shadow:0 3px 12px rgba(0,0,0,0.2);
+.persona-tips-card {
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 1.6rem;
+	border-radius: 12px;
+	margin-bottom: 1.6rem;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 .persona-tips-card h2 {
@@ -136,11 +140,11 @@
 }
 
 .persona-tips li {
-  margin-bottom:.5rem;
-  margin-left: 1rem;
-  color:var(--text-secondary);
-  line-height:1.6;
-  text-align:left;
+	margin-bottom: .5rem;
+	margin-left: 1rem;
+	color: var(--text-secondary);
+	line-height: 1.6;
+	text-align: left;
 }
 
 /* DOTS */
@@ -150,6 +154,8 @@
 	justify-content: center;
 	gap: 10px;
 	margin-bottom: 1.8rem;
+	flex-wrap: wrap;
+	/* Prevents overflow if many dots exist */
 }
 
 .progress-dot {
@@ -169,6 +175,9 @@
 .persona-controls {
 	display: flex;
 	justify-content: space-between;
+	gap: 1rem;
+	/* Space between buttons when they wrap */
+	flex-wrap: wrap;
 }
 
 .persona-controls button {
@@ -179,6 +188,9 @@
 	color: white;
 	font-weight: 600;
 	cursor: pointer;
+	flex: 1 1 auto;
+	/* Allows buttons to grow on mobile */
+	min-width: 120px;
 }
 
 .persona-controls button:hover {
@@ -186,6 +198,7 @@
 	box-shadow: var(--shadow-hover);
 }
 
+/* MOBILE OPTIMIZATIONS */
 /* Accessiibility */
 .sr-only {
 position: absolute;
@@ -199,24 +212,34 @@ white-space: nowrap;
 border: 0;
 }
 
-/* MOBILE */
+@media (max-width: 600px) {
 
-@media (max-width:768px) {
-
-	.personas-card {
-		padding: 2rem;
+	/* Stack the table cells vertically for readability */
+	.personas-card .persona-table thead {
+		display: none;
+		/* Hide headers if they look cluttered in stack mode */
 	}
 
-	.persona-emoji {
-		font-size: 5rem;
+	.personas-card .persona-table,
+	.personas-card .persona-table tbody,
+	.personas-card .persona-table tr,
+	.personas-card .persona-table td {
+		display: block;
+		width: 100%;
 	}
 
-	.persona-name {
-		font-size: 1.8rem;
+	.personas-card .persona-table td {
+		border-bottom: none;
+		padding: 0.5rem 1rem;
 	}
 
-    .persona-table td, .persona-table th{
-    font-size:.9rem;
+	.personas-card .persona-table tr {
+		padding: 1rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, .1);
+	}
 
-    }
+	.persona-controls button {
+		width: 100%;
+		/* Buttons take full width on very small screens */
+	}
 }
