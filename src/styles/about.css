@@ -14,9 +14,10 @@
 	padding: clamp(1.5rem, 5vw, 3rem);
 	max-width: 1000px;
 	width: 100%;
+	margin-inline: auto;
+	/* <--- ADD THIS TO CENTER THE CARD */
 	box-shadow: var(--shadow);
 	animation: fadeIn 0.6s ease;
-	/* Define global text defaults to be inherited by all children */
 	color: var(--text-secondary);
 	line-height: 1.7;
 	text-align: left;
