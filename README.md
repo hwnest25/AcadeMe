@@ -139,7 +139,7 @@ Key accessibility considerations include:
 - **Responsive design**, ensuring the interface remains usable across different screen sizes and devices.
 
 These practices help create a more inclusive experience while following general web accessibility principles.
-
+</details>
 
 
 
