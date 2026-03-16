@@ -1,230 +1,174 @@
 /* ========================================
-   ABOUT PAGE STYLES
+   REFACTORED ABOUT PAGE (Optimized & DRY)
    ======================================== */
 
-.about-container {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
+/* 1. Global Card Defaults (Inheritance) */
+.about-card,
+.about-card * {
+	box-sizing: border-box;
 }
 
 .about-card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  max-width: 1000px;
-  width: 100%;
-  box-shadow: var(--shadow);
-  animation: fadeIn 0.6s ease;
+	background: var(--card-bg);
+	border-radius: var(--border-radius);
+	padding: clamp(1.5rem, 5vw, 3rem);
+	max-width: 1000px;
+	width: 100%;
+	box-shadow: var(--shadow);
+	animation: fadeIn 0.6s ease;
+	/* Define global text defaults to be inherited by all children */
+	color: var(--text-secondary);
+	line-height: 1.7;
+	text-align: left;
 }
 
+/* 2. Unified Surface Styles (Shared Logic) */
+.persona-card,
+.step-item,
+.highlight {
+	background: rgba(99, 102, 241, 0.08);
+	border-radius: 12px;
+	transition: all 0.3s ease;
+}
+
+/* 3. Typography & Headers */
 .about-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(99, 102, 241, 0.2);
-}
-
-.about-icon {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  animation: bounce 2s infinite;
+	text-align: center;
+	margin-bottom: 2rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 2px solid rgba(99, 102, 241, 0.2);
 }
 
 .about-title {
-  font-size: 3rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  font-weight: 700;
-}
-
-.about-tagline {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  font-style: italic;
-}
-
-.about-section {
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+	font-size: clamp(2rem, 6vw, 3rem);
+	font-weight: 700;
+	margin: 0.5rem 0;
+	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 
 .section-heading {
-  font-size: 2rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+	font-size: clamp(1.5rem, 4vw, 2rem);
+	color: var(--text-primary);
+	margin-bottom: 1.5rem;
+	font-weight: 600;
 }
 
-.about-text {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-  text-align: left;
-}
-
+/* 4. Responsive Layouts (No Media Queries needed for Grid) */
 .personas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
 }
 
 .persona-card {
-  background: rgba(99, 102, 241, 0.08);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  text-align: left;
+	padding: 2rem;
+	border: 2px solid transparent;
 }
 
-.persona-card:hover {
-  border-color: var(--primary-color);
-  background: rgba(99, 102, 241, 0.15);
-  transform: translateY(-5px);
+.persona-card-name,
+.step-content h4 {
+	color: var(--text-primary);
+	font-weight: 600;
+	margin-bottom: 0.5rem;
 }
 
-.persona-card-emoji {
-  font-size: 3.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.persona-card-name {
-  font-size: 1.4rem;
-  color: var(--text-primary);
-  text-align: center;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.persona-card-description {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.persona-highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.highlight {
-  background: rgba(99, 102, 241, 0.1);
-  padding: 0.8rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.highlight-label {
-  font-size: 0.8rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.highlight-text {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-/* Steps Section  */
-
-
-.steps-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
+/* 5. Steps (Using Flex-Wrap instead of Media Queries) */
 .step-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  background: rgba(99, 102, 241, 0.08);
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+	display: flex;
+	flex-wrap: wrap;
+	/* Automatically stacks on mobile */
+	gap: 1.5rem;
+	padding: 1.5rem;
+	justify-content: center;
+	/* Center for mobile */
 }
 
-.step-item:hover {
-  background: rgba(99, 102, 241, 0.15);
-  transform: translateX(10px);
+@media (min-width: 600px) {
+	.step-item {
+		justify-content: flex-start;
+	}
 }
 
 .step-number {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
+	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	flex-shrink: 0;
 }
 
-.step-content h4 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-  text-align: left;
+/* 6. Interaction Utilities */
+@media (hover: hover) {
+	.persona-card:hover {
+		border-color: var(--primary-color);
+		background: rgba(99, 102, 241, 0.15);
+		transform: translateY(-5px);
+	}
+
+	.step-item:hover {
+		background: rgba(99, 102, 241, 0.15);
+		transform: translateX(10px);
+	}
+
+	.cta-button:hover {
+		transform: translateY(-3px);
+		box-shadow: var(--shadow-hover);
+	}
 }
 
-.step-content p {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  text-align: left;
-}
-
-/* About Footer */
-
+/* 7. Footer & CTA */
 .about-footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 2px solid rgba(99, 102, 241, 0.2);
-}
-
-.about-footer p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+	text-align: center;
+	margin-top: 3rem;
+	padding-top: 2rem;
+	border-top: 2px solid rgba(99, 102, 241, 0.2);
 }
 
 .cta-button {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  padding: 1.2rem 3rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+	display: inline-block;
+	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+	color: white;
+	padding: 1rem clamp(1.5rem, 5vw, 3rem);
+	border-radius: 12px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.2rem;
+	box-shadow: var(--shadow);
+	transition: all 0.3s ease;
 }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+/* Simplified helper classes */
+.about-icon {
+	font-size: clamp(3rem, 8vw, 4rem);
+	animation: bounce 2s infinite;
+}
+
+.about-section {
+	margin-bottom: 3rem;
+	max-width: 700px;
+	margin-inline: auto;
+}
+
+.highlight {
+	padding: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.highlight-label {
+	font-size: 0.8rem;
+	color: var(--primary-color);
+	font-weight: 600;
+	text-transform: uppercase;
 }
