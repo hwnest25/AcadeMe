@@ -127,14 +127,16 @@
 	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-.persona-tips-card h3 {
-	margin-bottom: .6rem;
-	text-align: left;
+.persona-tips-card h2 {
+  margin-bottom:.6rem;
+  text-align:left;
+  width: 100%;
+  padding-left: 1.4rem
 }
 
-.persona-tips ul {
-	list-style: disc;
-	padding-left: 1.4rem;
+.persona-tips {
+  list-style:disc;
+  padding-left:1.4rem;
 }
 
 .persona-tips li {
@@ -197,6 +199,18 @@
 }
 
 /* MOBILE OPTIMIZATIONS */
+/* Accessiibility */
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0,0,0,0);
+white-space: nowrap;
+border: 0;
+}
 
 @media (max-width: 600px) {
 
