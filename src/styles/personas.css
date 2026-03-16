@@ -5,13 +5,11 @@
 .personas-container {
 	display: flex;
 	justify-content: center;
-	/* Responsive padding: smaller on mobile, 2rem on desktop */
 	padding: clamp(1rem, 5vw, 2rem);
 }
 
 .personas-card {
 	background: var(--card-bg);
-	/* Responsive internal padding */
 	padding: clamp(1.5rem, 8vw, 3rem);
 	border-radius: var(--border-radius);
 	max-width: 900px;
@@ -76,7 +74,7 @@
 .personas-card .persona-table {
 	width: 100%;
 	border-collapse: collapse;
-	/* Changed to auto to allow stacking logic in media queries */
+	/* Allow stacking logic in media queries */
 	table-layout: auto;
 }
 

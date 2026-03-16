@@ -65,7 +65,6 @@ body {
 	min-height: 100svh;
 	display: flex;
 	flex-direction: column;
-	/* 3. Added padding-inline so content doesn't touch screen edges on mobile */
 	padding-inline: clamp(16px, 5vw, 40px);
 }
 
