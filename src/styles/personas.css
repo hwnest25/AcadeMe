@@ -1,118 +1,148 @@
 /* ========================================
-   PERSONAS PAGE - CORE LAYOUT
+   PERSONAS PAGE
    ======================================== */
+
 .personas-container {
 	display: flex;
 	justify-content: center;
-	padding: clamp(1rem, 5vw, 2rem);
+	padding: 2rem;
 }
 
 .personas-card {
 	background: var(--card-bg);
-	padding: clamp(1.5rem, 8vw, 3rem);
+	padding: 3rem;
 	border-radius: var(--border-radius);
 	max-width: 900px;
 	width: 100%;
 	box-shadow: var(--shadow);
-	text-align: left;
-	/* Default alignment for children */
 }
 
-/* Grouped Sub-Card Styles (Persona & Tips) */
-.persona-subcard,
-.persona-tips-card {
-	background: rgba(255, 255, 255, 0.03);
-	border: 1px solid rgba(255, 255, 255, 0.06);
-	padding: 1.6rem;
-	border-radius: 12px;
-	margin-bottom: 1.6rem;
-	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+/* ========================================
+   SUB CARDS
+   ======================================== */
+
+.persona-subcard{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:1.6rem;
+  border-radius:12px;
+  margin-bottom:1.6rem;
+  box-shadow:0 3px 12px rgba(0,0,0,0.2);
 }
 
-/* Typography & Emoji */
-.persona-name {
+/* Persona Card Name */
+
+.personas-card .persona-name {
 	text-align: center;
-	font-size: clamp(1.6rem, 5vw, 2.3rem);
+	font-size: 2.3rem;
 	font-weight: 700;
 	margin-bottom: .5rem;
 }
 
-.persona-emoji {
-	font-size: clamp(4rem, 15vw, 7rem);
+/* EMOJI */
+
+.personas-card .persona-emoji {
+	font-size: 7rem;
 	text-align: center;
 	margin-bottom: 1.2rem;
 	animation: bounce 2s infinite;
 }
 
-.persona-description {
-	color: var(--text-secondary);
-	line-height: 1.8;
-	margin: 0 auto;
-	max-width: 640px;
-	font-size: 1.05rem;
+/* DESCRIPTION */
+
+.personas-card .persona-description{
+  	color:var(--text-secondary);
+  	line-height:1.8;
+	margin:0 auto;  
+	max-width:640px;
+  	text-align:left;
+  	font-size:1.05rem;
 }
 
-/* ========================================
-   TABLE STYLES
-   ======================================== */
+/* TABLE */
+
 .persona-table-wrapper {
 	margin-bottom: 2.2rem;
-	overflow-x: auto;
 }
 
-.persona-table {
+.personas-card .persona-table {
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 
-.persona-table th,
-.persona-table td {
-	padding: .9rem 1rem;
-	width: 50%;
-	vertical-align: top;
-}
-
-.persona-table th {
+.personas-card .persona-table th {
 	text-align: center;
+	padding: .9rem 1rem;
 	font-size: .95rem;
 	text-transform: uppercase;
 	letter-spacing: .5px;
-	border-bottom: 2px solid rgba(192, 122, 84, .35);
+  	/* border-bottom:2px solid rgba(99,102,241,.4); */
+	border-bottom:2px solid rgba(192,122,84,.35);
+
+
 	color: var(--primary-color);
 }
 
-.persona-table td {
-	color: var(--text-secondary);
-	border-bottom: 1px solid rgba(255, 255, 255, .05);
+.personas-card .persona-table td {
+  padding:.9rem 1rem;
+  color:var(--text-secondary);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  vertical-align:top;
+  text-align:left;
+}
+.personas-card .persona-table th,
+.personas-card .persona-table td {
+	width: 50%;
 }
 
-.persona-table tr:hover {
+.personas-card .persona-table tr:hover {
 	background: rgba(99, 102, 241, .06);
 }
+
+/* Colored edge indicators */
 
 .strength-cell {
 	border-left: 4px solid var(--success);
 }
 
 .challenge-cell {
+	/* border-left: 4px solid var(--accent); */
 	border-left: 2px solid var(--accent);
+
 }
 
-/* Tips List */
+/* TIPS */
+
+.persona-tips-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:1.6rem;
+  border-radius:12px;
+  margin-bottom:1.6rem;
+  box-shadow:0 3px 12px rgba(0,0,0,0.2);
+}
+
+.persona-tips-card h3 {
+  margin-bottom:.6rem;
+  text-align:left;
+}
+
 .persona-tips ul {
-	list-style: disc;
-	padding-left: 1.4rem;
+  list-style:disc;
+  padding-left:1.4rem;
 }
 
 .persona-tips li {
-	margin: 0 0 .5rem 1rem;
-	color: var(--text-secondary);
-	line-height: 1.6;
+  margin-bottom:.5rem;
+  margin-left: 1rem;
+  color:var(--text-secondary);
+  line-height:1.6;
+  text-align:left;
 }
 
-/* ========================================
-   CONTROLS & PROGRESS
-   ======================================== */
+/* DOTS */
+
 .persona-progress {
 	display: flex;
 	justify-content: center;
@@ -125,7 +155,6 @@
 	height: 12px;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, .2);
-	transition: transform 0.3s;
 }
 
 .progress-dot.active {
@@ -133,11 +162,11 @@
 	transform: scale(1.2);
 }
 
+/* NAVIGATION */
+
 .persona-controls {
 	display: flex;
 	justify-content: space-between;
-	gap: 1rem;
-	flex-wrap: wrap;
 }
 
 .persona-controls button {
@@ -148,9 +177,6 @@
 	color: white;
 	font-weight: 600;
 	cursor: pointer;
-	flex: 1 1 auto;
-	min-width: 120px;
-	transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .persona-controls button:hover {
@@ -158,57 +184,24 @@
 	box-shadow: var(--shadow-hover);
 }
 
-/* ========================================
-   RESPONSIVE OVERRIDES
-   ======================================== */
-@media (max-width: 768px) {
-	.persona-table thead {
-		display: none;
+/* MOBILE */
+
+@media (max-width:768px) {
+
+	.personas-card {
+		padding: 2rem;
 	}
 
-	.persona-table,
-	.persona-table tbody,
-	.persona-table tr,
-	.persona-table td {
-		display: block;
-		width: 100%;
+	.persona-emoji {
+		font-size: 5rem;
 	}
 
-	.persona-table tr {
-		margin-bottom: 1rem;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	.persona-name {
+		font-size: 1.8rem;
 	}
 
-	.persona-table td {
-		border-bottom: none;
-		padding: 0.5rem 1rem;
-	}
+    .persona-table td, .persona-table th{
+    font-size:.9rem;
 
-	.strength-cell::before {
-		content: "STRENGTH";
-		color: var(--success);
-	}
-
-	.challenge-cell::before {
-		content: "CHALLENGE";
-		color: var(--accent);
-	}
-
-	.strength-cell::before,
-	.challenge-cell::before {
-		display: block;
-		font-size: 0.7rem;
-		font-weight: bold;
-		margin-bottom: 0.2rem;
-	}
-}
-
-@media (max-width: 480px) {
-	.persona-controls {
-		flex-direction: column;
-	}
-
-	.persona-controls button {
-		width: 100%;
-	}
+    }
 }

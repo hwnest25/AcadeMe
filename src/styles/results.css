@@ -1,216 +1,184 @@
+
 /* ========================================
-   IMPROVED RESULTS PAGE STYLES
+   RESULTS PAGE STYLES
    ======================================== */
 
 .results-container {
-	display: flex;
-	justify-content: center;
-	/* Fluid padding: scales from 1rem (mobile) to 2rem (desktop) */
-	padding: clamp(1rem, 5vw, 2rem);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .results-card {
-	background: var(--card-bg);
-	border-radius: var(--border-radius);
-	/* Fluid internal padding: scales from 1.5rem to 3rem */
-	padding: clamp(1.5rem, 8vw, 3rem);
-	max-width: 850px;
-	width: 100%;
-	box-shadow: var(--shadow);
-	animation: scaleIn 0.6s ease;
-	/* Prevents horizontal overflow from hover transforms */
-	overflow: hidden;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  max-width: 850px;
+  width: 100%;
+  box-shadow: var(--shadow);
+  animation: scaleIn 0.6s ease;
 }
 
 .results-header {
-	text-align: center;
-	/* Reduced margins for mobile fluidity */
-	margin-bottom: clamp(1.5rem, 6vw, 3rem);
-	padding-bottom: clamp(1rem, 4vw, 2rem);
-	border-bottom: 2px solid rgba(99, 102, 241, 0.2);
-	position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+  position: relative;
 }
 
 .confetti {
-	position: absolute;
-	top: -20px;
-	left: 50%;
-	transform: translateX(-50%);
-	/* Scalable emoji size */
-	font-size: clamp(2rem, 6vw, 3rem);
-	animation: confettiFall 3s infinite;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: confettiFall 3s infinite;
 }
 
 .persona-emoji {
-	/* Fluid emoji: scales from 4rem to 6rem */
-	font-size: clamp(4rem, 15vw, 6rem);
-	margin-bottom: 1rem;
-	animation: bounce 2s infinite;
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
 }
 
 .results-title {
-	/* Slightly smaller on mobile to keep letter-spacing effective */
-	font-size: clamp(0.9rem, 3vw, 1.1rem);
-	color: var(--text-secondary);
-	margin-bottom: 0.5rem;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
 .persona-name {
-	/* Critical change: Prevents long names from breaking mobile layout */
-	font-size: clamp(1.8rem, 8vw, 2.8rem);
-	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	margin-bottom: 1.5rem;
-	font-weight: 700;
-	line-height: 1.2;
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .persona-description {
-	/* Fluid font and line-height for better mobile reading */
-	font-size: clamp(1rem, 4vw, 1.15rem);
-	color: var(--text-secondary);
-	line-height: clamp(1.6, 5vw, 1.9);
-	max-width: 650px;
-	margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .persona-section {
-	margin-bottom: clamp(1.5rem, 6vw, 2.5rem);
+  margin-bottom: 2.5rem;
 }
 
 .section-title {
-	font-size: clamp(1.2rem, 5vw, 1.5rem);
-	margin-bottom: 1.2rem;
-	color: var(--text-primary);
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .section-icon {
-	font-size: clamp(1.4rem, 5vw, 1.8rem);
+  font-size: 1.8rem;
 }
 
 .persona-list {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .persona-list li {
-	/* Fluid internal padding for list items */
-	padding: clamp(0.8rem, 4vw, 1.2rem);
-	background: rgba(99, 102, 241, 0.08);
-	border-radius: 10px;
-	border-left: 4px solid var(--primary-color);
-	color: var(--text-secondary);
-	display: flex;
-	align-items: flex-start;
-	gap: 1rem;
-	line-height: 1.6;
-	transition: all 0.3s ease;
+  padding: 1.2rem;
+  background: rgba(99, 102, 241, 0.08);
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  line-height: 1.7;
+  transition: all 0.3s ease;
 }
 
-/* Hover effect restricted to devices that actually have a pointer */
-@media (hover: hover) {
-	.persona-list li:hover {
-		background: rgba(99, 102, 241, 0.15);
-		transform: translateX(5px);
-	}
+.persona-list li:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: translateX(5px);
 }
 
 .list-bullet {
-	color: var(--primary-color);
-	font-weight: 700;
-	font-size: 1.2rem;
-	flex-shrink: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
-/* Colors (Kept identical) */
 .strengths-list li {
-	border-left-color: var(--success);
+  border-left-color: var(--success);
 }
 
 .strengths-list .list-bullet {
-	color: var(--success);
+  color: var(--success);
 }
 
 .challenges-list li {
-	border-left-color: rgb(142, 46, 46);
+  border-left-color: rgb(142, 46, 46);
 }
 
 .challenges-list .list-bullet {
-	color: rgb(142, 46, 46);
+  color: rgb(142, 46, 46);
 }
 
 .tips-list li {
-	border-left-color: var(--secondary-color);
+  border-left-color: var(--secondary-color);
 }
 
 .tips-list .list-bullet {
-	color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .results-actions {
-	display: flex;
-	/* Essential: Wraps buttons on mobile */
-	flex-wrap: wrap;
-	gap: 1rem;
-	justify-content: center;
-	margin-top: clamp(2rem, 8vw, 3rem);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 .action-button {
-	padding: 1.1rem 2.2rem;
-	border: none;
-	border-radius: 12px;
-	font-size: 1.05rem;
-	font-weight: 600;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/* Better alignment when stacked */
-	gap: 0.5rem;
-	/* Buttons expand to fill width on small screens */
-	flex: 1 1 280px;
-	max-width: 100%;
+  padding: 1.1rem 2.2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .action-button.primary {
-	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-	color: white;
-	box-shadow: var(--shadow);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: var(--shadow);
 }
 
 .action-button.secondary {
-	background: transparent;
-	border: 2px solid var(--primary-color);
-	color: var(--primary-color);
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
-@media (hover: hover) {
-	.action-button:hover {
-		transform: translateY(-3px);
-		box-shadow: var(--shadow-hover);
-	}
-
-	.action-button.secondary:hover {
-		background: rgba(99, 102, 241, 0.1);
-	}
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
 }
 
-/* Accessibility: Adjusts spacing for very small devices */
-@media (max-width: 400px) {
-	.action-button {
-		padding: 1rem 1.5rem;
-		font-size: 0.95rem;
-	}
+.action-button.secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
 }
