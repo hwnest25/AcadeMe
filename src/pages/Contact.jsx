@@ -19,7 +19,7 @@ const Contact = () => (
                     <span className="info-icon">🌐</span>
                     <div className="info-content">
                         <h4>Website</h4>
-                        <p href="https://academe-quiz.vercel.app/">academe-quiz.vercel.app</p>
+                        <a href="https://academe-quiz.vercel.app/">academe-quiz.vercel.app</a>
                        
                     </div>
                 </div>

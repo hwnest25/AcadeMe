@@ -123,9 +123,11 @@
   box-shadow:0 3px 12px rgba(0,0,0,0.2);
 }
 
-.persona-tips-card h3 {
+.persona-tips-card h2 {
   margin-bottom:.6rem;
   text-align:left;
+  width: 100%;
+  padding-left: 1.4rem
 }
 
 .persona-tips ul {
@@ -182,6 +184,19 @@
 .persona-controls button:hover {
 	transform: translateY(-2px);
 	box-shadow: var(--shadow-hover);
+}
+
+/* Accessiibility */
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0,0,0,0);
+white-space: nowrap;
+border: 0;
 }
 
 /* MOBILE */

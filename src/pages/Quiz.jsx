@@ -29,28 +29,62 @@ const Quiz = () => {
     };
 
     return (
-        <div className="quiz-container">
-            <div className="quiz-card">
-                <div className="quiz-header">
+        <main className="quiz-container">
+
+            <section className="quiz-card">
+
+                <header className="quiz-header">
+
+                    {/* Accessible question counter */}
                     <div className="progress-info">
-                        <span className="question-counter">
+                        <span
+                            className="question-counter"
+                            aria-live="polite"
+                        >
                             Question {currentIndex + 1} of {questions.length}
                         </span>
                     </div>
-                        <span className="progress-percentage">{Math.round(progress)}%</span>
-                    <div className="progress-bar-container">
+
+                    {/* Visible progress percentage */}
+                    <span
+                        className="progress-percentage"
+                        aria-hidden="true"
+                    >
+                        {Math.round(progress)}%
+                    </span>
+
+                    {/* Accessible progress bar */}
+                    <div
+                        className="progress-bar-container"
+                        role="progressbar"
+                        aria-label="Quiz progress"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow={Math.round(progress)}
+                    >
                         <div
                             className="progress-bar-fill"
                             style={{ width: `${progress}%` }}
                         />
                     </div>
-                </div>
-                <QuestionCards
-                    question={currentQuestion}
-                    onAnswer={handleAnswer}
-                />
-            </div>
-        </div>
+
+                </header>
+
+                {/* Live region for question updates */}
+                <section
+                    className="question-section"
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+                    <QuestionCards
+                        question={currentQuestion}
+                        onAnswer={handleAnswer}
+                    />
+                </section>
+
+            </section>
+
+        </main>
     );
 };
 
