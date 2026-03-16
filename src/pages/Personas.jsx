@@ -7,9 +7,9 @@ const Personas = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
   }, [index]);
 
@@ -36,31 +36,50 @@ const Personas = () => {
   }));
 
   return (
-    <div className="personas-container">
-      <div className="personas-card">
+    <main className="personas-container">
 
-        <h2 className="persona-name">{persona.name}</h2>
+      <article
+        className="personas-card"
+        aria-live="polite"
+        aria-atomic="true"
+      >
 
-        <div className="persona-emoji">{persona.emoji}</div>
+        <header>
+
+          <h1 className="persona-name">
+            {persona.name}
+          </h1>
+
+          <div className="persona-emoji">
+            <span aria-hidden="true">{persona.emoji}</span>
+          </div>
+
+        </header>
 
 
-        {/* DESCRIPTION CARD */}
-        <div className="persona-subcard">
+        {/* DESCRIPTION */}
+        <section className="persona-subcard">
+
           <p className="persona-description">
             {persona.description}
           </p>
-        </div>
+
+        </section>
 
 
-        {/* TABLE CARD */}
-        <div className="persona-subcard">
+        {/* STRENGTHS + CHALLENGES TABLE */}
+        <section className="persona-subcard">
 
           <table className="persona-table">
 
+            <caption className="sr-only">
+              Strengths and challenges for the {persona.name} study persona
+            </caption>
+
             <thead>
               <tr>
-                <th>Strengths</th>
-                <th>Challenges</th>
+                <th scope="col">Strengths</th>
+                <th scope="col">Challenges</th>
               </tr>
             </thead>
 
@@ -75,13 +94,13 @@ const Personas = () => {
 
           </table>
 
-        </div>
+        </section>
 
 
-        {/* TIPS CARD */}
-        <div className="persona-subcard persona-tips-card">
+        {/* TIPS */}
+        <section className="persona-subcard persona-tips-card">
 
-          <h3>Tips</h3>
+          <h2>Tips</h2>
 
           <ul className="persona-tips">
             {persona.tips.map((tip, i) => (
@@ -89,28 +108,52 @@ const Personas = () => {
             ))}
           </ul>
 
-        </div>
+        </section>
 
 
-        {/* DOTS */}
-        <div className="persona-progress">
+        {/* PERSONA PROGRESS INDICATOR */}
+        <nav
+          className="persona-progress"
+          aria-label="Persona navigation"
+        >
+
           {personaList.map((_, i) => (
             <span
               key={i}
               className={`progress-dot ${i === index ? "active" : ""}`}
+              aria-label={`Persona ${i + 1} of ${personaList.length}`}
+              role="status"
             />
           ))}
-        </div>
+
+        </nav>
 
 
-        {/* NAVIGATION */}
-        <div className="persona-controls">
-          <button onClick={prevPersona}>⬅ Previous</button>
-          <button onClick={nextPersona}>Next ➡</button>
-        </div>
+        {/* NAVIGATION BUTTONS */}
+        <nav
+          className="persona-controls"
+          aria-label="Persona navigation controls"
+        >
 
-      </div>
-    </div>
+          <button
+            onClick={prevPersona}
+            aria-label="Show previous study persona"
+          >
+            ⬅ Previous
+          </button>
+
+          <button
+            onClick={nextPersona}
+            aria-label="Show next study persona"
+          >
+            Next ➡
+          </button>
+
+        </nav>
+
+      </article>
+
+    </main>
   );
 };
 

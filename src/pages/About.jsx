@@ -1,28 +1,32 @@
-import { personas } from "../data/persona_details"
-import PersonaPreviewCard from "../components/PersonaPreviewCard"
-import StepsSection from "../components/StepsSection"
-import { Link } from "react-router-dom"
-import "../styles/about.css"
+import { personas } from "../data/persona_details";
+import PersonaPreviewCard from "../components/PersonaPreviewCard";
+import StepsSection from "../components/StepsSection";
+import { Link } from "react-router-dom";
+import "../styles/about.css";
 
 const About = () => {
 
-  const personaList = Object.values(personas)
+  const personaList = Object.values(personas);
 
   return (
-    <div className="about-container">
+    <main className="about-container">
 
-      <div className="about-card">
+      <article className="about-card">
 
-        <div className="about-header">
-          <div className="about-icon">📚</div>
+        <header className="about-header">
+          <div className="about-icon">
+            <span aria-hidden="true">📚</span>
+          </div>
+
           <h1 className="about-title">What is AcadeMe?</h1>
+
           <p className="about-tagline">
             Discover and optimize your studying style
           </p>
-        </div>
+        </header>
 
 
-        <div className="about-section">
+        <section className="about-section">
 
           <p className="about-text">
             The AcadeMe Study Persona Quiz is an interactive assessment designed
@@ -33,19 +37,22 @@ const About = () => {
             By answering 10 carefully crafted questions you'll discover which
             of six distinct personas best matches your learning style.
           </p>
-        </div>
 
-        <div className="about-section">
+        </section>
+
+
+        <section className="about-section">
 
           <h2 className="section-heading">
             How It Works
           </h2>
 
-          <StepsSection/>
+          <StepsSection />
 
-        </div>
+        </section>
 
-        <div className="about-section">
+
+        <section className="about-section">
 
           <h2 className="section-heading">
             Meet the Six Personas
@@ -53,36 +60,38 @@ const About = () => {
 
           <div className="personas-grid">
 
-            {personaList.map((persona,index) => (
+            {personaList.map((persona) => (
               <PersonaPreviewCard
-                key={index}
+                key={persona.name}
                 persona={persona}
               />
             ))}
 
           </div>
 
-        </div>
+        </section>
 
 
-
-
-        <div className="about-footer">
+        <footer className="about-footer">
 
           <p>
             Ready to discover your study persona?
           </p>
 
-          <Link to="/quiz" className="cta-button">
+          <Link
+            to="/quiz"
+            className="cta-button"
+            aria-label="Start the AcadeMe study persona quiz"
+          >
             Take the Quiz
           </Link>
 
-        </div>
+        </footer>
 
-      </div>
+      </article>
 
-    </div>
-  )
-}
+    </main>
+  );
+};
 
-export default About
+export default About;
