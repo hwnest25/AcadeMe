@@ -1,10 +1,19 @@
 # AcadeMe - Your learner lens, decoded.
+
 ![AcadeMe Cover](src/assets/AcadeMe_Cover_Slide_Image.jpg)
+
 ## What is your Study Persona?
 
 **AcadeMe** is an interactive web application that helps students understand their learning habits through a short diagnostic quiz. Based on your answers, you are assigned one of six unique study personas, each with personalized strengths, challenges, and actionable tips to help you study smarter.
 
-#### Take the assessment today to discover your study persona and maximize your learning potential.
+<p align="center">
+  <strong>Take the assessment today to discover your study persona.</strong>
+</p>
+
+<p align="center">
+  <a href="https://academe-quiz.vercel.app/"><strong>Start the Quiz →</strong></a>
+</p>
+
 ---
 
 ##  Study Personas
@@ -142,7 +151,6 @@ These practices help create a more inclusive experience while following general 
 </details>
 
 
-
 ## Getting Started
 
 ### Prerequisites
@@ -188,14 +196,12 @@ Then open your browser at the live localhost link in the terminal.
 - Allow users to retake the quiz
 - Improve accessibility (ARIA labels and keyboard navigation)
 
-## Team - Mourad, Hope, and Fabian
+## Team 
 | Username | GitHub |
 |-----|-----|
 | codeedope | https://github.com/codeedope |
-| hwnest25 | https://github.com/hwnest25 |
+| hwnest25  | https://github.com/hwnest25  |
 | MouradOur | https://github.com/MouradOur |
-
-
 
 ---
 ## License
