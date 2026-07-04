@@ -20,7 +20,7 @@ const Quiz = () => {
         if (currentIndex + 1 === questions.length) {
             const result = PersonaCalculator(newAnswers);
             navigate("/results", {
-                state: { persona: result },
+                state: { persona: result, answers: newAnswers },
             });
         } else {
             setAnswers(newAnswers);
