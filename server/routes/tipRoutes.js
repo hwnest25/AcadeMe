@@ -1,5 +1,4 @@
 // routes/tipRoutes.js
-// Author: Hope
 
 import { Router } from 'express';
 import {

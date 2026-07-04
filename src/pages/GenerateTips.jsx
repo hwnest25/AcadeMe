@@ -1,5 +1,4 @@
 // pages/GenerateTips.jsx
-// Author: Fabian
 
 import { useState } from 'react';
 import { generateTip, saveTip } from '../services/tipService.js';

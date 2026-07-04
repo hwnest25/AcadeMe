@@ -1,5 +1,4 @@
 // controllers/authController.js
-// Author: Mourad
 // Auth request handling: register, login, logout, session check
 
 import passport from '../config/passport.js';

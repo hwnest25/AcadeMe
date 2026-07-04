@@ -1,5 +1,4 @@
 // routes/quizRoutes.js
-// Author: Hope
 
 import { Router } from 'express';
 import { submitQuizResult, getLatestResult, listPersonas } from '../controllers/quizController.js';

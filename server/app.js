@@ -1,5 +1,4 @@
 // app.js
-// Author: Mourad
 // Express app configuration
 
 import express from 'express';

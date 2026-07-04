@@ -1,5 +1,4 @@
 // context/AuthContext.jsx
-// Author: Fabian
 // Global auth state — wraps the whole app
 
 import { createContext, useContext, useState, useEffect } from 'react';

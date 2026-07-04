@@ -1,5 +1,4 @@
 // services/authService.js
-// Author: Fabian
 
 import api from './api.js';
 

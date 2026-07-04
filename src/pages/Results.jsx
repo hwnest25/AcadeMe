@@ -1,5 +1,4 @@
 // Pages/Results.jsx
-// Author: Fabian (additions) — save to DB, email share
 import { useEffect, useRef } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { personas } from "../data/persona_details.js";

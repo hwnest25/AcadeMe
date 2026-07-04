@@ -1,5 +1,4 @@
 // models/quizModel.js
-// Author: Hope
 // Database queries for quiz results
 
 import pool from '../config/db.js';

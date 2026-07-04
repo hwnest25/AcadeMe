@@ -1,5 +1,4 @@
 // components/NavBar.jsx
-// Author: Fabian (auth links added)
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import { getAvatarSrc, getAvatarEmoji } from "./AvatarPicker.jsx";

@@ -1,5 +1,4 @@
 // controllers/quizController.js
-// Author: Hope
 // Handles saving quiz results and fetching personas
 
 import { saveQuizResult, getLatestQuizResult, getAllPersonas } from '../models/quizModel.js';

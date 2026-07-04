@@ -1,5 +1,4 @@
 // config/db.js
-// Author: Mourad
 // PostgreSQL connection pool using Supabase
 
 import pg from 'pg';

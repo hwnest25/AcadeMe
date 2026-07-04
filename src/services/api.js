@@ -1,5 +1,4 @@
 // services/api.js
-// Author: Fabian
 // Central Axios instance — all API calls go through here
 
 import axios from 'axios';

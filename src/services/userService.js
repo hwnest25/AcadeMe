@@ -1,5 +1,4 @@
 // services/userService.js
-// Author: Fabian
 
 import api from './api.js';
 

@@ -1,5 +1,4 @@
 // server.js
-// Author: Mourad
 // Entry point — starts the Express server
 
 import dotenv from 'dotenv';

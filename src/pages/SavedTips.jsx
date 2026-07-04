@@ -1,5 +1,4 @@
 // pages/SavedTips.jsx
-// Author: Fabian
 
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';

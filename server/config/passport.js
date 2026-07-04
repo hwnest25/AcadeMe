@@ -1,5 +1,4 @@
 // config/passport.js
-// Author: Mourad
 // Passport.js local strategy configuration
 
 import passport from 'passport';

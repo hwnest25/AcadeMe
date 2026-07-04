@@ -1,5 +1,4 @@
 // pages/TipDetail.jsx
-// Author: Fabian
 // Unique URL page for a single saved study tip (/tips/:id)
 
 import { useEffect, useState } from 'react';

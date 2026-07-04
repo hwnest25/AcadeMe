@@ -1,5 +1,4 @@
 // models/tipModel.js
-// Author: Hope
 // Database queries for generated study tips (main CRUD content)
 
 import pool from '../config/db.js';

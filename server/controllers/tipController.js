@@ -1,5 +1,4 @@
 // controllers/tipController.js
-// Author: Hope
 // CRUD operations for saved study tips
 
 import {

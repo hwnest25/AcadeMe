@@ -1,5 +1,4 @@
 // routes/userRoutes.js
-// Author: Hope
 
 import { Router } from 'express';
 import { getProfile, editProfile, getDashboard } from '../controllers/userController.js';

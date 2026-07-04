@@ -1,5 +1,4 @@
 // controllers/aiController.js
-// Author: Hope
 // Handles Groq AI tip generation
 
 import Groq from 'groq-sdk';

@@ -1,5 +1,4 @@
 // pages/Profile.jsx
-// Author: Fabian
 
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';

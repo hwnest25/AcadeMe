@@ -1,5 +1,4 @@
 // controllers/feedbackController.js
-// Author: Hope
 // Handles thumbs up / thumbs down feedback on tips
 
 import { upsertFeedback, deleteFeedback } from '../models/feedbackModel.js';
