@@ -1,5 +1,5 @@
 // models/userModel.js
-// Author: Mourad
+// Author: Hope
 // All database queries related to users
 
 import pool from '../config/db.js';
