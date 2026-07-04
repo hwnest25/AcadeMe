@@ -4,9 +4,8 @@
 import Groq from 'groq-sdk';
 import { getLatestQuizResult } from '../models/quizModel.js';
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
 export const generateTip = async (req, res) => {
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   const { subject, education_level } = req.body;
 
   if (!subject || !education_level) {
