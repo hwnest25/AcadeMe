@@ -12,6 +12,8 @@ import pg from 'pg';
 import passport from './config/passport.js';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import quizRoutes from './routes/quizRoutes.js';
+import tipRoutes from './routes/tipRoutes.js';
 
 dotenv.config();
 
@@ -56,6 +58,8 @@ app.use(passport.session());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/quiz', quizRoutes);
+app.use('/api/tips', tipRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
