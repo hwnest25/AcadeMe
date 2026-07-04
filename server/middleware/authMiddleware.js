@@ -1,0 +1,10 @@
+// middleware/authMiddleware.js
+// Author: Mourad
+// Protect routes — only authenticated users may proceed
+
+export const requireAuth = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.status(401).json({ message: 'Unauthorized. Please log in.' });
+};
