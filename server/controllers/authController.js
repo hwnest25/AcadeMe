@@ -1,6 +1,6 @@
 // controllers/authController.js
 // Author: Mourad
-// Handles register, login, logout, and session check
+// Auth request handling: register, login, logout, session check
 
 import passport from '../config/passport.js';
 import { createUser, findUserByEmail } from '../models/userModel.js';

@@ -1,5 +1,5 @@
 // controllers/userController.js
-// Author: Mourad
+// Author: Hope
 // Handles user profile retrieval and editing
 
 import { findUserById, updateUser } from '../models/userModel.js';
