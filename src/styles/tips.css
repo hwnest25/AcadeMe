@@ -108,20 +108,20 @@
 
 .bookmark-btn {
   background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  flex-shrink: 0;
-  transition: background 0.15s, color 0.15s;
-  color: var(--color-text-muted, #c8d5e8);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  padding: 0.35rem 0.45rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  color: var(--color-text-muted, #c8d5e8);
 }
 
-.bookmark-btn:hover { background: rgba(167, 139, 202, 0.1); color: #a78bca; }
-.bookmark-btn.bookmarked { color: #a78bca; border-color: rgba(167, 139, 202, 0.35); }
+.bookmark-btn:hover { background: rgba(167, 139, 202, 0.1); color: #a78bca; border-color: rgba(167, 139, 202, 0.3); }
+.bookmark-btn.bookmarked { color: #a78bca; border-color: rgba(167, 139, 202, 0.4); background: rgba(167, 139, 202, 0.08); }
 
 .tip-meta {
   display: flex;
@@ -181,25 +181,29 @@
 .feedback-btn {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.85rem;
-  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.3rem 0.65rem;
+  font-size: 1.1rem;
+  line-height: 1;
   cursor: pointer;
   color: var(--color-text-muted, #c8d5e8);
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.feedback-btn:hover {
+  transform: scale(1.15);
 }
 
 .feedback-btn.active-up {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(16, 185, 129, 0.15);
   border-color: #10b981;
-  color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
 }
 
 .feedback-btn.active-down {
-  background: rgba(239, 68, 68, 0.12);
+  background: rgba(239, 68, 68, 0.15);
   border-color: #ef4444;
-  color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
 
 .tip-date {
@@ -209,7 +213,7 @@
 
 /* Generate tips page */
 .generate-container {
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
 }
@@ -241,23 +245,84 @@
   margin-top: 2rem;
   background: linear-gradient(135deg, rgba(167, 139, 202, 0.1), rgba(196, 174, 224, 0.1));
   border: 1px solid rgba(167, 139, 202, 0.25);
-  border-radius: 14px;
-  padding: 1.5rem;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.generated-result-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(167, 139, 202, 0.2);
+  padding-bottom: 1.25rem;
+}
+
+.generated-persona-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a78bca;
+  background: rgba(167, 139, 202, 0.12);
+  border: 1px solid rgba(167, 139, 202, 0.25);
+  border-radius: 20px;
+  padding: 0.2rem 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .generated-result h2 {
-  font-size: 1.15rem;
-  color: #a78bca;
-  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text, #f1f5f9);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
 }
 
-.generated-result pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-family: inherit;
-  font-size: 0.9rem;
+.generated-subject-label {
+  font-size: 0.88rem;
+  color: var(--color-text-muted, #c8d5e8);
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tips-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-size: 0.93rem;
+  line-height: 1.65;
   color: var(--color-text, #f1f5f9);
-  line-height: 1.7;
+  counter-increment: tip-counter;
+}
+
+.tips-list {
+  counter-reset: tip-counter;
+}
+
+.tips-list-item::before {
+  content: counter(tip-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  background: linear-gradient(135deg, #a78bca, #c4aee0);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
 }
 
 .result-actions {

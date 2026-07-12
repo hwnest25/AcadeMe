@@ -34,9 +34,10 @@ const NavBar = ({ name }) => {
                         <Link to="/about" className={`nav-link ${isActive("/about")}`}>About</Link>
                     </li>
                     <li>
-                        <Link to="/personas" className={`nav-link ${isActive("/personas")}`}>
-                            Explore the Personas
-                        </Link>
+                        <Link to="/personas" className={`nav-link ${isActive("/personas")}`}>Personas</Link>
+                    </li>
+                    <li>
+                        <Link to="/quiz" className={`nav-link ${isActive("/quiz")}`}>Quiz</Link>
                     </li>
                     <li>
                         <Link to="/contact" className={`nav-link ${isActive("/contact")}`}>Contact</Link>
@@ -71,9 +72,8 @@ const NavBar = ({ name }) => {
                             </li>
                             <li>
                                 <button
-                                    className="nav-link"
+                                    className="nav-link nav-logout"
                                     onClick={handleLogout}
-                                    style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
                                 >
                                     Log Out
                                 </button>
@@ -87,14 +87,7 @@ const NavBar = ({ name }) => {
                             <li>
                                 <Link
                                     to="/register"
-                                    className="nav-link"
-                                    style={{
-                                        background: "#a78bca",
-                                        color: "#fff",
-                                        padding: "0.4rem 1rem",
-                                        borderRadius: "8px",
-                                        fontWeight: 600,
-                                    }}
+                                    className="nav-link nav-signup"
                                 >
                                     Sign Up
                                 </Link>

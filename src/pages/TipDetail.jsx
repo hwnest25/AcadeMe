@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { getTip, updateTip, deleteTip, toggleBookmark, submitFeedback, removeFeedback } from '../services/tipService.js';
+import { getTip, deleteTip, toggleBookmark, submitFeedback, removeFeedback } from '../services/tipService.js';
 import { PERSONA_AVATARS } from '../components/AvatarPicker.jsx';
 import '../styles/tips.css';
 import '../styles/auth.css';
@@ -14,17 +14,11 @@ const TipDetail = () => {
 
   const [tip, setTip] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [editing, setEditing] = useState(false);
-  const [editForm, setEditForm] = useState({ title: '', content: '' });
   const [error, setError] = useState('');
-  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     getTip(id)
-      .then((res) => {
-        setTip(res.data.tip);
-        setEditForm({ title: res.data.tip.title, content: res.data.tip.content });
-      })
+      .then((res) => setTip(res.data.tip))
       .catch(() => setError('Tip not found.'))
       .finally(() => setLoading(false));
   }, [id]);
@@ -46,24 +40,6 @@ const TipDetail = () => {
         setTip((prev) => ({ ...prev, feedback_value: value }));
       }
     } catch (err) { console.error(err); }
-  };
-
-  const handleEdit = async (e) => {
-    e.preventDefault();
-    if (!editForm.title.trim() || !editForm.content.trim()) {
-      setError('Title and content are required.'); return;
-    }
-    setSaving(true);
-    setError('');
-    try {
-      const res = await updateTip(id, editForm);
-      setTip(res.data.tip);
-      setEditing(false);
-    } catch (err) {
-      setError(err.response?.data?.message || 'Update failed.');
-    } finally {
-      setSaving(false);
-    }
   };
 
   const handleDelete = async () => {
@@ -96,13 +72,16 @@ const TipDetail = () => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem' }}>
           <h1>{tip.title}</h1>
           <button
-            className="bookmark-btn"
+            className={`bookmark-btn${tip.is_bookmarked ? ' bookmarked' : ''}`}
             onClick={handleBookmark}
             aria-label={tip.is_bookmarked ? 'Remove bookmark' : 'Bookmark this tip'}
             aria-pressed={tip.is_bookmarked}
-            style={{ fontSize: '1rem', fontWeight: 600 }}
           >
-            {tip.is_bookmarked ? 'Saved' : 'Save'}
+            {tip.is_bookmarked ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            )}
           </button>
         </div>
 
@@ -123,46 +102,9 @@ const TipDetail = () => {
         </div>
       </header>
 
-      {editing ? (
-        <form onSubmit={handleEdit} className="generate-form" noValidate>
-          <div className="form-group">
-            <label htmlFor="edit-title">Title</label>
-            <input
-              id="edit-title"
-              value={editForm.title}
-              onChange={(e) => setEditForm((p) => ({ ...p, title: e.target.value }))}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="edit-content">Content</label>
-            <textarea
-              id="edit-content"
-              value={editForm.content}
-              onChange={(e) => setEditForm((p) => ({ ...p, content: e.target.value }))}
-              rows={12}
-              required
-              style={{ fontFamily: 'inherit' }}
-            />
-          </div>
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
-            <button type="submit" className="auth-btn" disabled={saving} aria-busy={saving}>
-              {saving ? 'Saving…' : 'Save Changes'}
-            </button>
-            <button
-              type="button"
-              className="btn-secondary"
-              onClick={() => { setEditing(false); setError(''); }}
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      ) : (
-        <div className="tip-detail-content" aria-label="Tip content">
-          {tip.content}
-        </div>
-      )}
+      <div className="tip-detail-content" aria-label="Tip content">
+        {tip.content}
+      </div>
 
       <div className="tip-detail-actions">
         <div className="feedback-btns" role="group" aria-label="Rate this tip">
@@ -171,32 +113,26 @@ const TipDetail = () => {
             onClick={() => handleFeedback('up')}
             aria-label="This tip resonates with me"
             aria-pressed={tip.feedback_value === 'up'}
+            title="Resonates"
           >
-            Resonates
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
           </button>
           <button
             className={`feedback-btn${tip.feedback_value === 'down' ? ' active-down' : ''}`}
             onClick={() => handleFeedback('down')}
             aria-label="This tip does not resonate"
             aria-pressed={tip.feedback_value === 'down'}
+            title="Doesn't resonate"
           >
-            Doesn't resonate
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>
           </button>
         </div>
 
-        {!editing && (
-          <>
-            <button className="btn-secondary" onClick={() => setEditing(true)}>
-              Edit
-            </button>
-            <button className="btn-danger" onClick={handleDelete}>
-              Delete
-            </button>
-          </>
-        )}
+        <button className="btn-danger" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
 
-      {/* Email share */}
       <div className="share-section">
         <h3>Share these tips</h3>
         <div className="share-buttons">
@@ -212,8 +148,6 @@ const TipDetail = () => {
 
       <p style={{ fontSize: '0.75rem', color: '#9ca3af', marginTop: '1.5rem' }}>
         Created {new Date(tip.created_at).toLocaleDateString()}
-        {tip.updated_at !== tip.created_at &&
-          ` · Updated ${new Date(tip.updated_at).toLocaleDateString()}`}
       </p>
     </main>
   );

@@ -33,24 +33,24 @@
 	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Persona Card Name */
+/* HERO — two-column layout */
 
-.personas-card .persona-name {
-	text-align: center;
-	/* Fluid font size: scales between 1.8rem and 2.3rem */
-	font-size: clamp(1.8rem, 6vw, 2.3rem);
-	font-weight: 700;
-	margin-bottom: .5rem;
+.persona-hero {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	margin-bottom: 1.8rem;
 }
 
-/* EMOJI */
+.persona-hero-image {
+	flex-shrink: 0;
+}
 
-.personas-card .persona-emoji {
-	/* Fluid emoji size: scales between 4rem and 7rem */
-	font-size: clamp(4rem, 15vw, 7rem);
-	text-align: center;
-	margin-bottom: 1.2rem;
-	animation: bounce 2s infinite;
+.persona-hero-text {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 /* IMAGE */
@@ -61,19 +61,27 @@
 }
 
 .persona-illustration {
-	width: clamp(260px, 48vw, 420px);
-	height: clamp(260px, 48vw, 420px);
+	width: clamp(260px, 40vw, 420px);
+	height: clamp(260px, 40vw, 420px);
 	object-fit: contain;
-	border-radius: 12px;
+	border-radius: 16px;
 	animation: bounce 2s infinite;
 }
 
 .persona-illustration-placeholder {
-	width: clamp(260px, 48vw, 420px);
-	height: clamp(260px, 48vw, 420px);
+	width: clamp(260px, 40vw, 420px);
+	height: clamp(260px, 40vw, 420px);
 	background: rgba(255, 255, 255, 0.05);
-	border-radius: 12px;
-	margin: 0 auto;
+	border-radius: 16px;
+}
+
+/* Persona Card Name */
+
+.personas-card .persona-name {
+	font-size: clamp(1.6rem, 4vw, 2.3rem);
+	font-weight: 700;
+	margin-bottom: 0;
+	text-align: left;
 }
 
 /* DESCRIPTION */
@@ -81,12 +89,20 @@
 .personas-card .persona-description {
 	color: var(--text-secondary);
 	line-height: 1.8;
-	margin: 0 auto;
-	max-width: 640px;
-	width: 100%;
-	/* Ensures it uses available space */
-	text-align: left;
 	font-size: 1.05rem;
+	text-align: left;
+}
+
+@media (max-width: 640px) {
+	.persona-hero {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.personas-card .persona-name,
+	.personas-card .persona-description {
+		text-align: center;
+	}
 }
 
 /* TABLE */
@@ -112,6 +128,16 @@
 	letter-spacing: .5px;
 	border-bottom: 2px solid rgba(167, 139, 202, 0.3);
 	color: var(--primary-color);
+}
+
+.personas-card .persona-table th:first-child {
+	color: var(--success);
+	border-bottom-color: var(--success);
+}
+
+.personas-card .persona-table th:last-child {
+	color: var(--danger);
+	border-bottom-color: var(--danger);
 }
 
 .personas-card .persona-table td {
@@ -175,34 +201,6 @@
 	text-align: left;
 }
 
-/* DOTS */
-
-.persona-progress {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	flex-wrap: wrap;
-}
-
-/* When dots are inside the top nav controls, they flex inline */
-.persona-controls .persona-progress {
-	margin: 0;
-	flex: 1;
-}
-
-.progress-dot {
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, .2);
-}
-
-.progress-dot.active {
-	background: var(--primary-color);
-	transform: scale(1.2);
-}
-
 /* NAVIGATION */
 
 .persona-controls {
@@ -210,26 +208,56 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
-	flex-wrap: wrap;
 	margin-bottom: 1.8rem;
+	padding: 0.4rem 0;
 }
 
-.persona-controls button {
-	padding: .8rem 1.8rem;
+.persona-nav-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
 	border: none;
-	border-radius: 10px;
-	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-	color: white;
-	font-weight: 600;
+	background: none;
+	color: var(--text-secondary);
 	cursor: pointer;
-	flex: 1 1 auto;
-	/* Allows buttons to grow on mobile */
-	min-width: 120px;
+	flex-shrink: 0;
+	transition: color 0.2s, transform 0.15s;
 }
 
-.persona-controls button:hover {
-	transform: translateY(-2px);
-	box-shadow: var(--shadow-hover);
+.persona-nav-btn:hover {
+	color: var(--text-primary);
+	transform: scale(1.15);
+}
+
+/* DOTS */
+
+.persona-progress {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1;
+}
+
+.progress-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.18);
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	transition: background 0.2s, transform 0.2s, width 0.2s;
+}
+
+.progress-dot.active {
+	background: var(--primary-color);
+	transform: scale(1.25);
+	width: 22px;
+	border-radius: 6px;
 }
 
 /* MOBILE OPTIMIZATIONS */

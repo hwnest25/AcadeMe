@@ -3,7 +3,7 @@ import PersonaPreviewCard from "../components/PersonaPreviewCard";
 import StepsSection from "../components/StepsSection";
 import { Link } from "react-router-dom";
 import "../styles/about.css";
-import aboutHeaderImg from "../assets/icons/about-header.svg";
+import academeLogo from "../assets/icons/academe-logo.svg";
 
 const About = () => {
 
@@ -16,7 +16,7 @@ const About = () => {
 
         <header className="about-header">
           <div className="about-icon">
-            <img src={aboutHeaderImg} alt="" aria-hidden="true" />
+            <img src={academeLogo} alt="" aria-hidden="true" />
           </div>
 
           <h1 className="about-title">What is AcadeMe?</h1>

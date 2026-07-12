@@ -116,8 +116,24 @@ const GenerateTips = () => {
           aria-live="polite"
           aria-label="Generated study tips"
         >
-          <h2>{result.title}</h2>
-          <pre>{result.content}</pre>
+          <div className="generated-result-header">
+            <span className="generated-persona-tag">
+              {result.persona_name} · {result.education_level === 'university' ? 'University' : 'High School'}
+            </span>
+            <h2>{result.title}</h2>
+            <p className="generated-subject-label">{result.subject}</p>
+          </div>
+
+          <ol className="tips-list">
+            {result.content
+              .split(/\n/)
+              .filter((line) => /^\d+\./.test(line.trim()))
+              .map((line, i) => (
+                <li key={i} className="tips-list-item">
+                  {line.replace(/^\d+\.\s*/, '')}
+                </li>
+              ))}
+          </ol>
 
           <div className="result-actions">
             {!saved ? (
@@ -143,7 +159,6 @@ const GenerateTips = () => {
             </button>
           </div>
 
-          {/* Email share */}
           <div className="share-section">
             <h3>Share these tips</h3>
             <div className="share-buttons">
