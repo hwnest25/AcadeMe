@@ -2,6 +2,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import { getAvatarSrc, getAvatarEmoji } from "./AvatarPicker.jsx";
+import logoImg from "../assets/icons/academe-logo.svg";
 
 const NavBar = ({ name }) => {
     const location = useLocation();
@@ -22,7 +23,7 @@ const NavBar = ({ name }) => {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    <span className="logo-icon">🎓</span>
+                    <img src={logoImg} alt="" aria-hidden="true" className="logo-icon" />
                     <span className="logo-text">{name}</span>
                 </Link>
                 <ul className="navbar-menu">
@@ -88,7 +89,7 @@ const NavBar = ({ name }) => {
                                     to="/register"
                                     className="nav-link"
                                     style={{
-                                        background: "#aa3bff",
+                                        background: "#a78bca",
                                         color: "#fff",
                                         padding: "0.4rem 1rem",
                                         borderRadius: "8px",

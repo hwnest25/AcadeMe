@@ -29,7 +29,7 @@ const Results = () => {
     const buildEmailBody = () =>
         encodeURIComponent(
             `I just discovered my study persona on AcadeMe!\n\n` +
-            `I am: ${FinalPersona?.name} ${FinalPersona?.emoji}\n\n` +
+            `I am: ${FinalPersona?.name}\n\n` +
             `${FinalPersona?.description}\n\n` +
             `Key strengths:\n${FinalPersona?.strengths.map((s) => `• ${s}`).join('\n')}\n\n` +
             `— Discover yours at AcadeMe`
@@ -62,9 +62,16 @@ const Results = () => {
                 aria-atomic="true"
             >
                 <header className="results-header">
-                    <div className="confetti" aria-hidden="true">🎉</div>
-                    <div className="persona-emoji">
-                        <span aria-hidden="true">{FinalPersona.emoji}</span>
+                    <div className="persona-image">
+                        {FinalPersona.image ? (
+                            <img
+                                src={FinalPersona.image}
+                                alt={FinalPersona.name}
+                                className="persona-illustration"
+                            />
+                        ) : (
+                            <div className="persona-illustration-placeholder" aria-label={FinalPersona.name} />
+                        )}
                     </div>
                     <h1 className="results-title">Your Study Persona</h1>
                     <h2 className="persona-name">{FinalPersona.name}</h2>
@@ -74,7 +81,6 @@ const Results = () => {
                 {/* STRENGTHS */}
                 <section className="persona-section">
                     <h3 className="section-title">
-                        <span className="section-icon" aria-hidden="true">💪</span>
                         Your Strengths
                     </h3>
                     <ul className="persona-list strengths-list">
@@ -90,7 +96,6 @@ const Results = () => {
                 {/* CHALLENGES */}
                 <section className="persona-section">
                     <h3 className="section-title">
-                        <span className="section-icon" aria-hidden="true">⚠️</span>
                         Challenges to Watch
                     </h3>
                     <ul className="persona-list challenges-list">
@@ -106,7 +111,6 @@ const Results = () => {
                 {/* TIPS */}
                 <section className="persona-section">
                     <h3 className="section-title">
-                        <span className="section-icon" aria-hidden="true">💡</span>
                         Tips for Success
                     </h3>
                     <ul className="persona-list tips-list">
@@ -128,7 +132,7 @@ const Results = () => {
                             className="share-btn share-btn-email"
                             aria-label="Share your persona result by email"
                         >
-                            ✉️ Share by Email
+                            Share by Email
                         </a>
                     </div>
                 </div>
@@ -140,7 +144,6 @@ const Results = () => {
                             className="action-button primary"
                             aria-label="Generate personalised study tips"
                         >
-                            <span aria-hidden="true">✨</span>
                             Generate Study Tips
                         </Link>
                     )}
@@ -149,7 +152,6 @@ const Results = () => {
                         onClick={() => navigate("/quiz")}
                         aria-label="Retake the study persona quiz"
                     >
-                        <span aria-hidden="true">🔄</span>
                         Retake Quiz
                     </button>
                     <button
@@ -157,7 +159,6 @@ const Results = () => {
                         onClick={() => navigate("/")}
                         aria-label="Return to the AcadeMe homepage"
                     >
-                        <span aria-hidden="true">🏠</span>
                         Back to Home
                     </button>
                 </footer>

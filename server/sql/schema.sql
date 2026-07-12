@@ -1,6 +1,5 @@
 -- AcadeMe Database Schema
 -- PostgreSQL (Supabase)
--- Author: Mourad
 
 -- Sessions table (required by connect-pg-simple)
 CREATE TABLE IF NOT EXISTS "session" (

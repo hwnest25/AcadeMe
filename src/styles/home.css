@@ -6,21 +6,23 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 60vh;
-	padding: 2rem;
+	min-height: 80vh;
+	padding: 3rem 2rem;
 
 }
 
 
 .home-card {
 	background: var(--card-bg);
+	border: 1px solid var(--glass-border);
 	border-radius: var(--border-radius);
-	/* padding: 2rem 3rem 2.5rem; */
-	padding: 1.8rem 3rem 2rem;
-	max-width: 650px;
+	padding: 4rem 5rem 4.5rem;
+	max-width: 920px;
 	width: 100%;
 	text-align: center;
 	box-shadow: var(--shadow);
+	backdrop-filter: var(--glass-blur);
+	-webkit-backdrop-filter: var(--glass-blur);
 	animation: slideUp 0.6s ease;
 }
 
@@ -28,6 +30,14 @@
 .home-card p {
 	margin: 1rem;
 	margin-bottom: -0.5rem;
+}
+
+.home-hero-image img {
+	width: clamp(80px, 15vw, 120px);
+	height: clamp(80px, 15vw, 120px);
+	object-fit: contain;
+	animation: pulse 2s infinite;
+	margin-bottom: 0;
 }
 
 .home-emoji {
@@ -68,11 +78,14 @@
 	gap: .4rem;
 	padding: 1rem 1.5rem;
 	border-radius: 12px;
-	background: rgba(255, 255, 255, .05);
+	background: rgba(167, 139, 202, 0.07);
+	border: 1px solid rgba(167, 139, 202, 0.12);
 }
 
 .feature-icon {
-	font-size: 2.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	object-fit: contain;
 }
 
 .feature-text {
@@ -82,7 +95,7 @@
 }
 
 .start-button {
-	background: linear-gradient(150deg, var(--primary-color), var(--secondary-color));
+	background: linear-gradient(135deg, #a78bca, #c4aee0);
 	color: white;
 	border: none;
 	padding: 0.7rem 1.8rem;
@@ -96,10 +109,6 @@
 	box-shadow: var(--shadow);
 }
 
-/* .start-button:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
-} */
 .start-button:hover {
 	transform: translateY(-2px);
 	box-shadow: var(--shadow-hover);
@@ -113,10 +122,3 @@
 .start-button:hover .button-arrow {
 	transform: translateX(5px);
 }
-
-/* .home-note {
-  margin-top: 5rem;  
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
- */

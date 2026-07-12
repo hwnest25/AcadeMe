@@ -152,7 +152,7 @@ const GenerateTips = () => {
                 className="share-btn share-btn-email"
                 aria-label="Share tips by email"
               >
-                ✉️ Share by Email
+                Share by Email
               </a>
             </div>
           </div>

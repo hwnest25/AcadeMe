@@ -1,7 +1,17 @@
 const PersonaPreviewCard = ({ persona }) => {
   return (
     <div className="persona-card">
-      <div className="persona-card-emoji">{persona.emoji}</div>
+      <div className="persona-card-image">
+        {persona.image ? (
+          <img
+            src={persona.image}
+            alt={persona.name}
+            className="persona-card-illustration"
+          />
+        ) : (
+          <div className="persona-card-illustration-placeholder" aria-label={persona.name} />
+        )}
+      </div>
 
       <h3 className="persona-card-name">
         {persona.name}

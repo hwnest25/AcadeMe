@@ -1,4 +1,3 @@
-// models/userModel.js
 // All database queries related to users
 
 import pool from '../config/db.js';

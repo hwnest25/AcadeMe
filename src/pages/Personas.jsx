@@ -1,17 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { personas } from "../data/persona_details";
 import "../styles/personas.css";
 
 const Personas = () => {
   const personaList = Object.values(personas);
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }, [index]);
 
   const nextPersona = () => {
     setIndex((prev) => (prev + 1) % personaList.length);
@@ -46,12 +39,54 @@ const Personas = () => {
 
         <header>
 
+          {/* TOP NAVIGATION */}
+          <nav
+            className="persona-controls"
+            aria-label="Persona navigation controls"
+          >
+            <button
+              onClick={prevPersona}
+              aria-label="Show previous study persona"
+            >
+              &larr; Previous
+            </button>
+
+            <nav
+              className="persona-progress"
+              aria-label="Persona navigation"
+            >
+              {personaList.map((_, i) => (
+                <span
+                  key={i}
+                  className={`progress-dot ${i === index ? "active" : ""}`}
+                  aria-label={`Persona ${i + 1} of ${personaList.length}`}
+                  role="status"
+                />
+              ))}
+            </nav>
+
+            <button
+              onClick={nextPersona}
+              aria-label="Show next study persona"
+            >
+              Next &rarr;
+            </button>
+          </nav>
+
           <h1 className="persona-name">
             {persona.name}
           </h1>
 
-          <div className="persona-emoji">
-            <span aria-hidden="true">{persona.emoji}</span>
+          <div className="persona-image">
+            {persona.image ? (
+              <img
+                src={persona.image}
+                alt={persona.name}
+                className="persona-illustration"
+              />
+            ) : (
+              <div className="persona-illustration-placeholder" aria-label={persona.name} />
+            )}
           </div>
 
         </header>
@@ -111,25 +146,9 @@ const Personas = () => {
         </section>
 
 
-        {/* PERSONA PROGRESS INDICATOR */}
-        <nav
-          className="persona-progress"
-          aria-label="Persona navigation"
-        >
+        {/* PERSONA PROGRESS INDICATOR — top nav includes dots, bottom nav is prev/next only */}
 
-          {personaList.map((_, i) => (
-            <span
-              key={i}
-              className={`progress-dot ${i === index ? "active" : ""}`}
-              aria-label={`Persona ${i + 1} of ${personaList.length}`}
-              role="status"
-            />
-          ))}
-
-        </nav>
-
-
-        {/* NAVIGATION BUTTONS */}
+        {/* BOTTOM NAVIGATION */}
         <nav
           className="persona-controls"
           aria-label="Persona navigation controls"
@@ -139,14 +158,14 @@ const Personas = () => {
             onClick={prevPersona}
             aria-label="Show previous study persona"
           >
-            ⬅ Previous
+            &larr; Previous
           </button>
 
           <button
             onClick={nextPersona}
             aria-label="Show next study persona"
           >
-            Next ➡
+            Next &rarr;
           </button>
 
         </nav>

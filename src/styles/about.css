@@ -11,12 +11,15 @@
 
 .about-card {
 	background: var(--card-bg);
+	border: 1px solid var(--glass-border);
 	border-radius: var(--border-radius);
 	/* Fluid padding: 1.5rem on mobile, 3rem on desktop */
 	padding: clamp(1.5rem, 8vw, 3rem);
 	max-width: 1000px;
 	width: 100%;
 	box-shadow: var(--shadow);
+	backdrop-filter: var(--glass-blur);
+	-webkit-backdrop-filter: var(--glass-blur);
 	animation: fadeIn 0.6s ease;
 	box-sizing: border-box;
 }
@@ -25,13 +28,20 @@
 	text-align: center;
 	margin-bottom: 2rem;
 	padding-bottom: 1.5rem;
-	border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+	border-bottom: 2px solid rgba(167, 139, 202, 0.2);
 }
 
 .about-icon {
 	/* Slightly smaller on mobile to save vertical space */
 	font-size: clamp(2.5rem, 10vw, 4rem);
 	margin-bottom: 0.5rem;
+	animation: bounce 2s infinite;
+}
+
+.about-icon img {
+	width: clamp(60px, 10vw, 80px);
+	height: clamp(60px, 10vw, 80px);
+	object-fit: contain;
 	animation: bounce 2s infinite;
 }
 
@@ -55,7 +65,7 @@
 
 .about-section {
 	margin-bottom: 3rem;
-	max-width: 700px;
+	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -77,13 +87,13 @@
 
 .personas-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
 	gap: 1.5rem;
 	margin-top: 2rem;
 }
 
 .persona-card {
-	background: rgba(99, 102, 241, 0.08);
+	background: rgba(167, 139, 202, 0.06);
 	padding: 2rem;
 	border-radius: 12px;
 	border: 2px solid transparent;
@@ -93,7 +103,7 @@
 
 .persona-card:hover {
 	border-color: var(--primary-color);
-	background: rgba(99, 102, 241, 0.15);
+	background: rgba(167, 139, 202, 0.12);
 	transform: translateY(-5px);
 }
 
@@ -101,6 +111,26 @@
 	font-size: 3.5rem;
 	text-align: center;
 	margin-bottom: 1rem;
+}
+
+.persona-card-image {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.persona-card-illustration {
+	width: 140px;
+	height: 140px;
+	object-fit: contain;
+	border-radius: 10px;
+}
+
+.persona-card-illustration-placeholder {
+	width: 140px;
+	height: 140px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 10px;
+	margin: 0 auto;
 }
 
 .persona-card-name {
@@ -126,7 +156,7 @@
 }
 
 .highlight {
-	background: rgba(99, 102, 241, 0.1);
+	background: rgba(167, 139, 202, 0.08);
 	padding: 0.8rem;
 	border-radius: 8px;
 	display: flex;
@@ -163,14 +193,14 @@
 	flex-direction: row;
 	align-items: flex-start;
 	gap: 1.5rem;
-	background: rgba(99, 102, 241, 0.08);
+	background: rgba(167, 139, 202, 0.06);
 	padding: 1.5rem;
 	border-radius: 12px;
 	transition: all 0.3s ease;
 }
 
 .step-item:hover {
-	background: rgba(99, 102, 241, 0.15);
+	background: rgba(167, 139, 202, 0.12);
 	/* Safe transform that won't cause horizontal scroll */
 	transform: translateX(min(10px, 2vw));
 }
@@ -209,7 +239,7 @@
 	text-align: center;
 	margin-top: 3rem;
 	padding-top: 2rem;
-	border-top: 2px solid rgba(99, 102, 241, 0.2);
+	border-top: 2px solid rgba(167, 139, 202, 0.2);
 }
 
 .about-footer p {

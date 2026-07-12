@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Mourad",
+  "author": "Group 4",
   "license": "ISC",
   "type": "module",
   "dependencies": {

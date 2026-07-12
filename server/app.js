@@ -1,6 +1,3 @@
-// app.js
-// Express app configuration
-
 import express from 'express';
 import cors from 'cors';
 import session from 'express-session';

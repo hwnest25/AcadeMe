@@ -1,4 +1,3 @@
-// models/feedbackModel.js
 // Database queries for tip feedback (thumbs up / thumbs down)
 
 import pool from '../config/db.js';

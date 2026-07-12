@@ -1,7 +1,14 @@
+import persistentPerfectionistImg from '../assets/persona_illustrations/persistent_perfectionist.png';
+import lastMinuteLegendImg from '../assets/persona_illustrations/last_minute_legend.png';
+import strategicSprinterImg from '../assets/persona_illustrations/strategic_sprinter.png';
+import aiAddictImg from '../assets/persona_illustrations/ai_addict.png';
+import effortlessEinsteinImg from '../assets/persona_illustrations/effortless_einstein.png';
+import consistentClimberImg from '../assets/persona_illustrations/consistent_climber.png';
+
 export const personas = {
     persistent_perfectionist: {
         name: "The Persistent Perfectionist",
-        emoji: "🧐",
+        image: persistentPerfectionistImg,
         description:
             "You're a dedicated and thorough learner who leaves nothing to chance. Structure, preparation, and consistency are your strongest assets. You take pride in being ready and rarely walk into an exam feeling unprepared.",
         strengths: [
@@ -26,7 +33,7 @@ export const personas = {
 
     lastminute_legend: {
         name: "The Last-Minute Legend",
-        emoji: "🫠",
+        image: lastMinuteLegendImg,
         description:
             "You're a deadline-driven learner who comes alive under pressure. Urgency is your fuel and you have a talent for absorbing information fast when it counts. While your results are often surprisingly good, your journey to get there is usually stressful.",
         strengths: [
@@ -51,7 +58,7 @@ export const personas = {
 
     strategic_sprinter: {
         name: "The Strategic Sprinter",
-        emoji: "⏱️",
+        image: strategicSprinterImg,
         description:
             "You're a smart and efficient learner who focuses on what matters most. You instinctively apply the 80/20 rule, spending energy where it has the highest impact. You work lean, move fast, and usually hit your targets without wasting time.",
         strengths: [
@@ -76,7 +83,7 @@ export const personas = {
 
     ai_addict: {
         name: "The AI Addict",
-        emoji: "🤖",
+        image: aiAddictImg,
         description:
             "You're a tech-forward learner who leverages modern tools to study smarter. You're at ease using AI and digital resources to accelerate your learning. You are always up to date with the latest tools and know how to use them to your advantage.",
         strengths: [
@@ -101,7 +108,7 @@ export const personas = {
 
     effortless_einstein: {
         name: "The Effortless Einstein",
-        emoji: "😏",
+        image: effortlessEinsteinImg,
         description:
             "You're a naturally gifted learner who grasps concepts quickly and intuitively. You rarely need to grind through material because things just click for you. Your ability to understand deeply with minimal effort is a real strength — but it can sometimes lead to underestimating challenges.",
         strengths: [
@@ -126,7 +133,7 @@ export const personas = {
 
     consistent_climber: {
         name: "The Consistent Climber",
-        emoji: "🧱",
+        image: consistentClimberImg,
         description:
             "You believe progress comes from steady effort over time. Instead of cramming or chasing perfection, you focus on showing up regularly and building your knowledge base brick by brick. Your approach may seem simple, but consistency is one of the most powerful ways to succeed.",
         strengths: [

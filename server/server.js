@@ -1,6 +1,3 @@
-// server.js
-// Entry point — starts the Express server
-
 import dotenv from 'dotenv';
 dotenv.config();
 

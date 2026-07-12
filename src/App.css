@@ -8,19 +8,21 @@
    ROOT VARIABLES
    ======================================== */
 :root {
-	--primary-color: #c07a54;
-	--primary-hover: #a86442;
-	--accent: #c07a54;
-	--secondary-color: #d49a78;
-	--background: #24204a;
-	--card-bg: #1e293b;
+	--primary-color: #a78bca;
+	--primary-hover: #8b6db0;
+	--accent: #a78bca;
+	--secondary-color: #c4aee0;
+	--background: #0f172a;
+	--card-bg: rgba(15, 20, 40, 0.35);
+	--glass-border: rgba(167, 139, 202, 0.22);
+	--glass-blur: blur(24px);
 	--text-primary: #f1f5f9;
-	--text-secondary: #cbd5e1;
+	--text-secondary: #c8d5e8;
 	--success: #10b981;
 	--danger: #ef4444;
 	--border-radius: 16px;
-	--shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-	--shadow-hover: 0 15px 40px rgba(192, 122, 84, .35);
+	--shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
+	--shadow-hover: 0 16px 48px rgba(167, 139, 202, 0.35);
 }
 
 /* ========================================
@@ -28,25 +30,23 @@
    ======================================== */
 html {
 	scroll-behavior: smooth;
-	/* Fix for mobile viewport height */
 	height: -webkit-fill-available;
 }
 
 body {
 	font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+	background-attachment: fixed;
 	color: var(--text-primary);
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
 	line-height: 1.6;
 	overflow-x: hidden;
-	/* Prevents side-scrolling on mobile */
 }
 
 #root {
 	max-width: 1200px;
 	margin: 0 auto;
-	/* Fluid padding: scales between 12px and 20px based on screen size */
 	padding: clamp(12px, 4vw, 20px);
 	width: 100%;
 }
@@ -55,7 +55,6 @@ body {
 	transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
-/* Ensure media handles small containers */
 img,
 svg {
 	max-width: 100%;
@@ -63,7 +62,7 @@ svg {
 }
 
 /* ========================================
-   SCROLLBAR & ANIMATIONS (Kept Original)
+   SCROLLBAR & ANIMATIONS
    ======================================== */
 ::-webkit-scrollbar {
 	width: 10px;
@@ -153,18 +152,20 @@ svg {
 }
 
 /* ========================================
-   NAVBAR (Improved for Fluidity)
+   NAVBAR
    ======================================== */
 .navbar {
-	background: #243244;
+	background: rgba(15, 23, 42, 0.7);
 	padding: 0.8rem 0;
 	margin-bottom: clamp(1.5rem, 5vw, 3rem);
 	border-radius: var(--border-radius);
-	box-shadow: var(--shadow);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.07);
 	position: sticky;
 	top: 10px;
 	z-index: 100;
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	width: 100%;
 }
 
@@ -191,6 +192,13 @@ svg {
 	animation: bounce 2s infinite;
 }
 
+.logo-icon {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
 .logo-text {
 	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 	-webkit-background-clip: text;
@@ -215,12 +223,12 @@ svg {
 
 .nav-link:hover {
 	color: var(--text-primary);
-	background: rgba(216, 150, 109, .12);
+	background: rgba(167, 139, 202, 0.1);
 }
 
 .nav-link.active {
 	color: var(--primary-color);
-	background: rgba(192, 122, 84, .12);
+	background: rgba(167, 139, 202, 0.12);
 }
 
 /* ========================================
@@ -228,7 +236,6 @@ svg {
    ======================================== */
 .personas-grid {
 	display: grid;
-	/* Automatically fits as many cards as possible, min 280px wide */
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 1.5rem;
 }
@@ -248,7 +255,6 @@ svg {
 		flex-wrap: wrap;
 	}
 
-	/* Home & Cards */
 	.home-card,
 	.quiz-card,
 	.results-card,
@@ -291,7 +297,6 @@ svg {
 
 @media (max-width: 480px) {
 
-	/* Smaller typography for very small devices */
 	.home-emoji,
 	.about-icon,
 	.contact-icon {

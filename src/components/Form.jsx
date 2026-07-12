@@ -196,11 +196,11 @@ const Form = () => {
             >
                 {submitted ? (
                     <>
-                        <span>✓</span> Message Sent!
+                        <span>&#10003;</span> Message Sent!
                     </>
                 ) : (
                     <>
-                        <span>📨</span> Send Message
+                        Send Message
                     </>
                 )}
             </button>

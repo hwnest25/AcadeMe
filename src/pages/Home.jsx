@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
+import homeHeroImg from "../assets/icons/home-hero.svg";
+import iconQuiz from "../assets/icons/icon-quiz.svg";
+import iconPersonas from "../assets/icons/icon-personas.svg";
+import iconTips from "../assets/icons/icon-tips.svg";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -11,8 +15,8 @@ const Home = () => {
 
                 <header>
 
-                    <div className="home-emoji">
-                        <span aria-hidden="true">🔍</span>
+                    <div className="home-hero-image">
+                        <img src={homeHeroImg} alt="" aria-hidden="true" />
                     </div>
 
                     <h1 className="home-title">
@@ -32,36 +36,21 @@ const Home = () => {
                     <ul className="home-features">
 
                         <li className="feature-item">
-                            <span
-                                className="feature-icon"
-                                aria-hidden="true"
-                            >
-                                📊
-                            </span>
+                            <img src={iconQuiz} alt="" aria-hidden="true" className="feature-icon" />
                             <span className="feature-text">
                                 10 Questions
                             </span>
                         </li>
 
                         <li className="feature-item">
-                            <span
-                                className="feature-icon"
-                                aria-hidden="true"
-                            >
-                                🧠
-                            </span>
+                            <img src={iconPersonas} alt="" aria-hidden="true" className="feature-icon" />
                             <span className="feature-text">
                                 6 Personas
                             </span>
                         </li>
 
                         <li className="feature-item">
-                            <span
-                                className="feature-icon"
-                                aria-hidden="true"
-                            >
-                                💡
-                            </span>
+                            <img src={iconTips} alt="" aria-hidden="true" className="feature-icon" />
                             <span className="feature-text">
                                 Expert Tips
                             </span>

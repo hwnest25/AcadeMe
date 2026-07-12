@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getTip, updateTip, deleteTip, toggleBookmark, submitFeedback, removeFeedback } from '../services/tipService.js';
+import { PERSONA_AVATARS } from '../components/AvatarPicker.jsx';
 import '../styles/tips.css';
 import '../styles/auth.css';
 
@@ -84,7 +85,7 @@ const TipDetail = () => {
   return (
     <main className="tip-detail-container">
       <nav aria-label="Breadcrumb" style={{ marginBottom: '1rem', fontSize: '0.875rem' }}>
-        <Link to="/tips" style={{ color: '#aa3bff' }}>← Back to My Tips</Link>
+        <Link to="/tips" style={{ color: '#a78bca' }}>← Back to My Tips</Link>
       </nav>
 
       {error && (
@@ -99,14 +100,22 @@ const TipDetail = () => {
             onClick={handleBookmark}
             aria-label={tip.is_bookmarked ? 'Remove bookmark' : 'Bookmark this tip'}
             aria-pressed={tip.is_bookmarked}
-            style={{ fontSize: '1.4rem' }}
+            style={{ fontSize: '1rem', fontWeight: 600 }}
           >
-            {tip.is_bookmarked ? '🔖' : '🏷️'}
+            {tip.is_bookmarked ? 'Saved' : 'Save'}
           </button>
         </div>
 
         <div className="tip-meta" style={{ marginTop: '0.5rem' }}>
-          <span className="tag tag-persona">{tip.emoji} {tip.persona_name}</span>
+          <span className="tag tag-persona">
+            {(() => {
+              const av = PERSONA_AVATARS.find((a) => a.key === tip.persona_key);
+              return av?.image ? (
+                <img src={av.image} alt="" aria-hidden="true" style={{ width: 16, height: 16, borderRadius: 3, objectFit: 'cover', marginRight: 4, verticalAlign: 'middle' }} />
+              ) : null;
+            })()}
+            {tip.persona_name}
+          </span>
           <span className="tag tag-subject">{tip.subject}</span>
           <span className="tag tag-level">
             {tip.education_level === 'university' ? 'University' : 'High School'}
@@ -163,7 +172,7 @@ const TipDetail = () => {
             aria-label="This tip resonates with me"
             aria-pressed={tip.feedback_value === 'up'}
           >
-            👍 Resonates
+            Resonates
           </button>
           <button
             className={`feedback-btn${tip.feedback_value === 'down' ? ' active-down' : ''}`}
@@ -171,7 +180,7 @@ const TipDetail = () => {
             aria-label="This tip does not resonate"
             aria-pressed={tip.feedback_value === 'down'}
           >
-            👎 Doesn't resonate
+            Doesn't resonate
           </button>
         </div>
 
@@ -196,7 +205,7 @@ const TipDetail = () => {
             className="share-btn share-btn-email"
             aria-label="Share this tip by email"
           >
-            ✉️ Share by Email
+            Share by Email
           </a>
         </div>
       </div>

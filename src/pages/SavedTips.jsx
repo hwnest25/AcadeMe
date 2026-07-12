@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { listTips, toggleBookmark, submitFeedback, removeFeedback } from '../services/tipService.js';
+import { PERSONA_AVATARS } from '../components/AvatarPicker.jsx';
 import '../styles/tips.css';
 
 const SavedTips = () => {
@@ -146,13 +147,19 @@ const SavedTips = () => {
                   aria-label={tip.is_bookmarked ? 'Remove bookmark' : 'Bookmark this tip'}
                   aria-pressed={tip.is_bookmarked}
                 >
-                  {tip.is_bookmarked ? '🔖' : '🏷️'}
+                  {tip.is_bookmarked ? 'Saved' : 'Save'}
                 </button>
               </div>
 
               <div className="tip-meta">
                 <span className="tag tag-persona">
-                  {tip.emoji} {tip.persona_name}
+                  {(() => {
+                    const av = PERSONA_AVATARS.find((a) => a.key === tip.persona_key);
+                    return av?.image ? (
+                      <img src={av.image} alt="" aria-hidden="true" style={{ width: 16, height: 16, borderRadius: 3, objectFit: 'cover', marginRight: 4, verticalAlign: 'middle' }} />
+                    ) : null;
+                  })()}
+                  {tip.persona_name}
                 </span>
                 <span className="tag tag-subject">{tip.subject}</span>
                 <span className="tag tag-level">
@@ -168,7 +175,7 @@ const SavedTips = () => {
                     aria-label="This tip resonates with me"
                     aria-pressed={tip.feedback_value === 'up'}
                   >
-                    👍
+                    +1
                   </button>
                   <button
                     className={`feedback-btn${tip.feedback_value === 'down' ? ' active-down' : ''}`}
@@ -176,7 +183,7 @@ const SavedTips = () => {
                     aria-label="This tip does not resonate with me"
                     aria-pressed={tip.feedback_value === 'down'}
                   >
-                    👎
+                    -1
                   </button>
                 </div>
                 <span className="tip-date">

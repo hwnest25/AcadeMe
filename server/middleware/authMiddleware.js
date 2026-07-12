@@ -1,5 +1,4 @@
-// middleware/authMiddleware.js
-// Protect routes — only authenticated users may proceed
+// Protect routes (Only authenticated users may proceed)
 
 export const requireAuth = (req, res, next) => {
   if (req.isAuthenticated()) {

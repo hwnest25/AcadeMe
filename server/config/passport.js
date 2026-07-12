@@ -1,4 +1,3 @@
-// config/passport.js
 // Passport.js local strategy configuration
 
 import passport from 'passport';

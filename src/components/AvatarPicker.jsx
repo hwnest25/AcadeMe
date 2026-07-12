@@ -1,5 +1,5 @@
 // components/AvatarPicker.jsx
-// Persona-based avatar selector — users pick an avatar that matches one of the
+// Persona-based avatar selector. Users pick an avatar that matches one of the
 // 6 study personas. Images live in src/assets/persona_illustrations/.
 // For personas without an image yet, an emoji fallback card is shown.
 // To add a missing image: drop the file into persona_illustrations/ and update

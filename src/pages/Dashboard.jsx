@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getDashboard } from '../services/userService.js';
 import { useAuth } from '../context/AuthContext.jsx';
-import { getAvatarSrc, getAvatarEmoji } from '../components/AvatarPicker.jsx';
+import { getAvatarSrc, getAvatarEmoji, PERSONA_AVATARS } from '../components/AvatarPicker.jsx';
 import '../styles/dashboard.css';
 
 const Dashboard = () => {
@@ -30,13 +30,13 @@ const Dashboard = () => {
             <img
               src={avatarSrc}
               alt={`${user?.username}'s avatar`}
-              style={{ width: 52, height: 52, borderRadius: 10, objectFit: 'cover', border: '2px solid #aa3bff' }}
+              style={{ width: 52, height: 52, borderRadius: 10, objectFit: 'cover', border: '2px solid #a78bca' }}
             />
           ) : (
             <span style={{ fontSize: '2.5rem' }} aria-hidden="true">{avatarEmoji}</span>
           )}
           <div>
-            <h1>Hey, {user?.username} 👋</h1>
+            <h1>Hey, {user?.username}</h1>
             <p>Here's your study dashboard.</p>
           </div>
         </div>
@@ -51,9 +51,20 @@ const Dashboard = () => {
             <h2 id="persona-heading">Your Study Persona</h2>
             {data?.latestQuizResult ? (
               <div className="persona-result-banner">
-                <span className="emoji" aria-hidden="true">
-                  {data.latestQuizResult.emoji}
-                </span>
+                {(() => {
+                  const avatarData = PERSONA_AVATARS.find(
+                    (a) => a.key === data.latestQuizResult.persona_key
+                  );
+                  return avatarData?.image ? (
+                    <img
+                      src={avatarData.image}
+                      alt={data.latestQuizResult.persona_name}
+                      style={{ width: 48, height: 48, borderRadius: 8, objectFit: 'cover', flexShrink: 0 }}
+                    />
+                  ) : (
+                    <div style={{ width: 48, height: 48, borderRadius: 8, background: 'rgba(255,255,255,0.1)', flexShrink: 0 }} aria-label={data.latestQuizResult.persona_name} />
+                  );
+                })()}
                 <div>
                   <h3>{data.latestQuizResult.persona_name}</h3>
                   <p>

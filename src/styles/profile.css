@@ -7,13 +7,16 @@
 }
 
 .profile-card {
-  background: var(--color-card-bg, #fff);
-  border: 1px solid var(--color-border, #e5e7eb);
+  background: var(--color-card-bg, rgba(30, 41, 59, 0.6));
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
   border-radius: 16px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 .profile-avatar-section {
@@ -26,34 +29,35 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  border: 3px solid #aa3bff;
+  border: 3px solid #a78bca;
+  box-shadow: 0 0 0 2px rgba(167, 139, 202, 0.2);
 }
 
 .profile-username {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--color-text, #111);
+  color: var(--color-text, #f1f5f9);
 }
 
 .profile-email {
   font-size: 0.875rem;
-  color: var(--color-text-muted, #6b7280);
+  color: var(--color-text-muted, #c8d5e8);
   margin-top: 0.15rem;
 }
 
 .profile-bio {
   font-size: 0.95rem;
-  color: var(--color-text, #111);
+  color: var(--color-text, #f1f5f9);
   line-height: 1.6;
   padding: 1rem;
-  background: var(--color-input-bg, #f9fafb);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 8px;
-  border: 1px solid var(--color-border, #e5e7eb);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .profile-meta {
   font-size: 0.8rem;
-  color: var(--color-text-muted, #6b7280);
+  color: var(--color-text-muted, #c8d5e8);
 }
 
 .profile-edit-form {

@@ -10,11 +10,14 @@
 
 .personas-card {
 	background: var(--card-bg);
+	border: 1px solid var(--glass-border);
 	padding: clamp(1.5rem, 8vw, 3rem);
 	border-radius: var(--border-radius);
 	max-width: 900px;
 	width: 100%;
 	box-shadow: var(--shadow);
+	backdrop-filter: var(--glass-blur);
+	-webkit-backdrop-filter: var(--glass-blur);
 }
 
 /* ========================================
@@ -48,6 +51,29 @@
 	text-align: center;
 	margin-bottom: 1.2rem;
 	animation: bounce 2s infinite;
+}
+
+/* IMAGE */
+
+.persona-image {
+	text-align: center;
+	margin-bottom: 1.2rem;
+}
+
+.persona-illustration {
+	width: clamp(260px, 48vw, 420px);
+	height: clamp(260px, 48vw, 420px);
+	object-fit: contain;
+	border-radius: 12px;
+	animation: bounce 2s infinite;
+}
+
+.persona-illustration-placeholder {
+	width: clamp(260px, 48vw, 420px);
+	height: clamp(260px, 48vw, 420px);
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 12px;
+	margin: 0 auto;
 }
 
 /* DESCRIPTION */
@@ -84,7 +110,7 @@
 	font-size: .95rem;
 	text-transform: uppercase;
 	letter-spacing: .5px;
-	border-bottom: 2px solid rgba(192, 122, 84, .35);
+	border-bottom: 2px solid rgba(167, 139, 202, 0.3);
 	color: var(--primary-color);
 }
 
@@ -103,17 +129,19 @@
 }
 
 .personas-card .persona-table tr:hover {
-	background: rgba(99, 102, 241, .06);
+	background: rgba(167, 139, 202, 0.05);
 }
 
 /* Colored edge indicators */
 
 .strength-cell {
 	border-left: 4px solid var(--success);
+	color: var(--success);
 }
 
 .challenge-cell {
-	border-left: 2px solid var(--accent);
+	border-left: 4px solid var(--danger);
+	color: var(--danger);
 }
 
 /* TIPS */
@@ -152,10 +180,15 @@
 .persona-progress {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 10px;
-	margin-bottom: 1.8rem;
 	flex-wrap: wrap;
-	/* Prevents overflow if many dots exist */
+}
+
+/* When dots are inside the top nav controls, they flex inline */
+.persona-controls .persona-progress {
+	margin: 0;
+	flex: 1;
 }
 
 .progress-dot {
@@ -175,9 +208,10 @@
 .persona-controls {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	gap: 1rem;
-	/* Space between buttons when they wrap */
 	flex-wrap: wrap;
+	margin-bottom: 1.8rem;
 }
 
 .persona-controls button {
