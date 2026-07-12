@@ -1,8 +1,19 @@
-// Protect routes (Only authenticated users may proceed)
+// Protect routes — verify JWT from Authorization header
+
+import jwt from 'jsonwebtoken';
 
 export const requireAuth = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next();
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Unauthorized. Please log in.' });
   }
-  res.status(401).json({ message: 'Unauthorized. Please log in.' });
+
+  const token = authHeader.split(' ')[1];
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: 'Session expired. Please log in again.' });
+  }
 };

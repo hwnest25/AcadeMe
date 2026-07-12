@@ -46,7 +46,7 @@ const Register = () => {
     setServerError('');
     try {
       const res = await register(form);
-      setUser(res.data.user);
+      setUser(res.data.user, res.data.token);
       navigate('/dashboard', { replace: true });
     } catch (err) {
       setServerError(err.response?.data?.message || 'Registration failed. Please try again.');

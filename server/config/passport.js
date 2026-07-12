@@ -1,4 +1,4 @@
-// Passport.js local strategy configuration
+// Passport.js local strategy — credential verification only (no session)
 
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
@@ -32,21 +32,5 @@ passport.use(
     }
   )
 );
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  try {
-    const result = await pool.query(
-      'SELECT id, username, email, bio, avatar_seed, created_at FROM users WHERE id = $1',
-      [id]
-    );
-    done(null, result.rows[0] || false);
-  } catch (err) {
-    done(err);
-  }
-});
 
 export default passport;

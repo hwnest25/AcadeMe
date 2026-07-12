@@ -12,16 +12,28 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setLoading(false);
+      return;
+    }
     getMe()
       .then((res) => setUser(res.data.user))
-      .catch(() => setUser(null))
+      .catch(() => {
+        localStorage.removeItem('token');
+        setUser(null);
+      })
       .finally(() => setLoading(false));
   }, []);
 
-  const login = (userData) => setUser(userData);
+  const login = (userData, token) => {
+    localStorage.setItem('token', token);
+    setUser(userData);
+  };
 
   const logout = async () => {
-    await logoutService();
+    await logoutService().catch(() => {});
+    localStorage.removeItem('token');
     setUser(null);
   };
 

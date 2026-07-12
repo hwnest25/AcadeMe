@@ -27,7 +27,7 @@ const Login = () => {
     setError('');
     try {
       const res = await login(form);
-      setUser(res.data.user);
+      setUser(res.data.user, res.data.token);
       navigate(from, { replace: true });
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please try again.');
