@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <!-- Person silhouette -->
-  <circle cx="24" cy="14" r="7" fill="rgba(196,174,224,0.2)" stroke="#c4aee0" stroke-width="2"/>
-  <path d="M10 38c0-7.7 6.3-14 14-14s14 6.3 14 14" fill="rgba(196,174,224,0.15)" stroke="#c4aee0" stroke-width="2" stroke-linecap="round"/>
-  <!-- Customise badge (small gear/star bottom-right) -->
-  <circle cx="36" cy="36" r="7" fill="rgba(167,139,202,0.3)" stroke="#a78bca" stroke-width="1.5"/>
-  <path d="M36 32.5v1.2M36 38.3v1.2M32.5 36h1.2M38.3 36h1.2M33.6 33.6l.85.85M37.55 37.55l.85.85M33.6 38.4l.85-.85M37.55 34.45l.85-.85" stroke="#c4aee0" stroke-width="1.4" stroke-linecap="round"/>
-  <circle cx="36" cy="36" r="2" fill="#c4aee0"/>
+  <!-- Vertical slider track 1 -->
+  <line x1="12" y1="8" x2="12" y2="40" stroke="#c4aee0" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Vertical slider track 2 -->
+  <line x1="24" y1="8" x2="24" y2="40" stroke="#c4aee0" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Vertical slider track 3 -->
+  <line x1="36" y1="8" x2="36" y2="40" stroke="#c4aee0" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Handle 1 (low position) -->
+  <circle cx="12" cy="30" r="5" fill="rgba(167,139,202,0.25)" stroke="#c4aee0" stroke-width="2.5"/>
+  <!-- Handle 2 (mid position) -->
+  <circle cx="24" cy="18" r="5" fill="rgba(167,139,202,0.25)" stroke="#c4aee0" stroke-width="2.5"/>
+  <!-- Handle 3 (high-mid position) -->
+  <circle cx="36" cy="26" r="5" fill="rgba(167,139,202,0.25)" stroke="#c4aee0" stroke-width="2.5"/>
 </svg>

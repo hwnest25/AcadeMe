@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { login } from '../services/authService.js';
+import { login as loginApi } from '../services/authService.js';
 import { useAuth } from '../context/AuthContext.jsx';
 import '../styles/auth.css';
 
 const Login = () => {
-  const { setUser } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/dashboard';
@@ -26,8 +26,8 @@ const Login = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await login(form);
-      setUser(res.data.user, res.data.token);
+      const res = await loginApi(form);
+      login(res.data.user, res.data.token);
       navigate(from, { replace: true });
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please try again.');

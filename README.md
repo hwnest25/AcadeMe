@@ -118,7 +118,7 @@ cd server && npm install && cd ..
 
 ### Environment Variables
 
-Create `server/.env`:
+Create `server/.env` (copy from `server/.env.example`):
 
 ```env
 PORT=5000
@@ -128,7 +128,7 @@ JWT_SECRET=your_jwt_secret
 GROQ_API_KEY=your_groq_api_key
 ```
 
-Create `.env.local` in the project root (optional — defaults to localhost):
+Create `.env` in the project root (copy from `.env.example`):
 
 ```env
 VITE_API_URL=http://localhost:5000/api

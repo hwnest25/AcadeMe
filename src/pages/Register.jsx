@@ -7,7 +7,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 import '../styles/auth.css';
 
 const Register = () => {
-  const { setUser } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -45,7 +45,7 @@ const Register = () => {
     setServerError('');
     try {
       const res = await register(form);
-      setUser(res.data.user, res.data.token);
+      login(res.data.user, res.data.token);
       navigate('/dashboard', { replace: true });
     } catch (err) {
       setServerError(err.response?.data?.message || 'Registration failed. Please try again.');
