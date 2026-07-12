@@ -45,7 +45,7 @@ const Home = () => {
                     </li>
                     <li className="feature-item">
                         <img src={iconTips} alt="" aria-hidden="true" className="feature-icon" />
-                        <span className="feature-text">Expert Tips</span>
+                        <span className="feature-text">Customised Tips</span>
                     </li>
                 </ul>
 
