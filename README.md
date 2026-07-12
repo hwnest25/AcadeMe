@@ -16,12 +16,12 @@ Each persona is diagnosed from your quiz answers and comes with tailored strengt
 
 | | Persona | Description |
 |---|---|---|
-| <img src="src/assets/persona_illustrations/persistent_perfectionist.png" width="140"/> | **The Persistent Perfectionist** | Organised, thorough, and always over-prepared. Structure and consistency are their strongest assets. |
-| <img src="src/assets/persona_illustrations/last_minute_legend.png" width="140"/> | **The Last-Minute Legend** | Deadline-driven and thrives under pressure. Somehow always pulls through at the last second. |
-| <img src="src/assets/persona_illustrations/strategic_sprinter.png" width="140"/> | **The Strategic Sprinter** | Efficient and goal-oriented. Applies the 80/20 rule and cuts straight to what matters most. |
-| <img src="src/assets/persona_illustrations/ai_addict.png" width="140"/> | **The AI Addict** | Tech-forward and digitally fluent. Leverages AI tools to accelerate and enhance their learning. |
-| <img src="src/assets/persona_illustrations/effortless_einstein.png" width="140"/> | **The Effortless Einstein** | Naturally intuitive and fast-learning. Grasps concepts quickly but can become complacent. |
-| <img src="src/assets/persona_illustrations/consistent_climber.png" width="140"/> | **The Consistent Climber** | Steady, routine-driven, and disciplined. Builds knowledge incrementally through daily effort. |
+| <img src="src/assets/persona_illustrations/persistent_perfectionist.png" width="220"/> | **The Persistent Perfectionist** | Organised, thorough, and always over-prepared. Structure and consistency are their strongest assets. |
+| <img src="src/assets/persona_illustrations/last_minute_legend.png" width="220"/> | **The Last-Minute Legend** | Deadline-driven and thrives under pressure. Somehow always pulls through at the last second. |
+| <img src="src/assets/persona_illustrations/strategic_sprinter.png" width="220"/> | **The Strategic Sprinter** | Efficient and goal-oriented. Applies the 80/20 rule and cuts straight to what matters most. |
+| <img src="src/assets/persona_illustrations/ai_addict.png" width="220"/> | **The AI Addict** | Tech-forward and digitally fluent. Leverages AI tools to accelerate and enhance their learning. |
+| <img src="src/assets/persona_illustrations/effortless_einstein.png" width="220"/> | **The Effortless Einstein** | Naturally intuitive and fast-learning. Grasps concepts quickly but can become complacent. |
+| <img src="src/assets/persona_illustrations/consistent_climber.png" width="220"/> | **The Consistent Climber** | Steady, routine-driven, and disciplined. Builds knowledge incrementally through daily effort. |
 
 ---
 

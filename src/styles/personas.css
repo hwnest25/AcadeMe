@@ -13,7 +13,7 @@
 	border: 1px solid var(--glass-border);
 	padding: clamp(1.5rem, 8vw, 3rem);
 	border-radius: var(--border-radius);
-	max-width: 900px;
+	max-width: 1100px;
 	width: 100%;
 	box-shadow: var(--shadow);
 	backdrop-filter: var(--glass-blur);
@@ -61,16 +61,16 @@
 }
 
 .persona-illustration {
-	width: clamp(300px, 44vw, 480px);
-	height: clamp(300px, 44vw, 480px);
+	width: clamp(340px, 52vw, 560px);
+	height: clamp(340px, 52vw, 560px);
 	object-fit: contain;
 	border-radius: 16px;
 	animation: bounce 2s infinite;
 }
 
 .persona-illustration-placeholder {
-	width: clamp(300px, 44vw, 480px);
-	height: clamp(300px, 44vw, 480px);
+	width: clamp(340px, 52vw, 560px);
+	height: clamp(340px, 52vw, 560px);
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 16px;
 }
