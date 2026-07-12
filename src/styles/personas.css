@@ -61,16 +61,16 @@
 }
 
 .persona-illustration {
-	width: clamp(260px, 40vw, 420px);
-	height: clamp(260px, 40vw, 420px);
+	width: clamp(300px, 44vw, 480px);
+	height: clamp(300px, 44vw, 480px);
 	object-fit: contain;
 	border-radius: 16px;
 	animation: bounce 2s infinite;
 }
 
 .persona-illustration-placeholder {
-	width: clamp(260px, 40vw, 420px);
-	height: clamp(260px, 40vw, 420px);
+	width: clamp(300px, 44vw, 480px);
+	height: clamp(300px, 44vw, 480px);
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 16px;
 }

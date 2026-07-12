@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../services/authService.js';
 import { useAuth } from '../context/AuthContext.jsx';
-import AvatarPicker from '../components/AvatarPicker.jsx';
 import '../styles/auth.css';
 
 const Register = () => {
@@ -124,11 +123,6 @@ const Register = () => {
               rows={3}
             />
           </div>
-
-          <AvatarPicker
-            selected={form.avatar_seed}
-            onChange={(key) => setForm((prev) => ({ ...prev, avatar_seed: key }))}
-          />
 
           <button
             type="submit"

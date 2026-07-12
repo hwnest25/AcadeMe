@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { personas } from "../data/persona_details.js";
 import { submitQuizResult } from "../services/quizService.js";
+import { updateProfile } from "../services/userService.js";
 import { useAuth } from "../context/AuthContext.jsx";
 import "../styles/results.css";
 import "../styles/tips.css";
@@ -10,7 +11,7 @@ import "../styles/tips.css";
 const Results = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const { user } = useAuth();
+    const { user, setUser } = useAuth();
     const savedRef = useRef(false);
 
     const personaKey = state?.persona;
@@ -18,10 +19,14 @@ const Results = () => {
     const FinalPersona = personaKey ? personas[personaKey] : null;
 
     // Save result to DB once when a logged-in user lands here
+    // Also update avatar_seed to match the diagnosed persona
     useEffect(() => {
         if (user && personaKey && answers.length && !savedRef.current) {
             savedRef.current = true;
             submitQuizResult({ persona_key: personaKey, answers_json: answers })
+                .catch(console.error);
+            updateProfile({ avatar_seed: personaKey })
+                .then((res) => setUser(res.data.user))
                 .catch(console.error);
         }
     }, [user, personaKey, answers]);
