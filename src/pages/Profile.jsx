@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { updateProfile } from '../services/userService.js';
-import AvatarPicker, { getAvatarSrc, getAvatarEmoji } from '../components/AvatarPicker.jsx';
+import AvatarPicker, { getAvatarSrc, getAvatarEmoji, PERSONA_AVATARS } from '../components/AvatarPicker.jsx';
 import '../styles/auth.css';
 import '../styles/profile.css';
 
@@ -21,6 +21,7 @@ const Profile = () => {
 
   const avatarSrc = getAvatarSrc(user?.avatar_seed);
   const avatarEmoji = getAvatarEmoji(user?.avatar_seed);
+  const personaLabel = PERSONA_AVATARS.find((a) => a.key === user?.avatar_seed)?.label || '';
 
   const handleChange = (e) => {
     setError('');
@@ -35,7 +36,7 @@ const Profile = () => {
     try {
       const res = await updateProfile(form);
       setUser(res.data.user);
-      setSuccess('Profile updated successfully.');
+      setSuccess('Profile updated.');
       setEditing(false);
       setTimeout(() => setSuccess(''), 3000);
     } catch (err) {
@@ -46,62 +47,53 @@ const Profile = () => {
   };
 
   return (
-    <main className="profile-container">
-      <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(1.4rem, 3vw, 1.9rem)' }}>
-        My Profile
-      </h1>
+    <main className="profile-page">
+      <h1 className="profile-page-title">My Profile</h1>
 
       {success && (
-        <div
-          className="auth-error"
-          style={{ background: '#f0fdf4', borderColor: '#86efac', color: '#166534' }}
-          role="status"
-          aria-live="polite"
-        >
-          {success}
-        </div>
+        <div className="profile-success" role="status" aria-live="polite">{success}</div>
       )}
 
-      <div className="profile-card">
-        {!editing ? (
-          <>
-            <div className="profile-avatar-section">
-              {avatarSrc ? (
-                <img
-                  src={avatarSrc}
-                  alt={`${user?.username}'s avatar`}
-                  className="profile-avatar"
-                />
-              ) : (
-                <span style={{ fontSize: '4rem' }} aria-hidden="true">{avatarEmoji}</span>
-              )}
-              <div>
-                <p className="profile-username">{user?.username}</p>
-                <p className="profile-email">{user?.email}</p>
-              </div>
-            </div>
+      {!editing ? (
+        <div className="profile-card">
 
+          {/* Avatar hero */}
+          <div className="profile-avatar-hero">
+            {avatarSrc ? (
+              <img src={avatarSrc} alt={`${user?.username}'s persona`} className="profile-avatar-large" />
+            ) : (
+              <span className="profile-avatar-emoji" aria-hidden="true">{avatarEmoji}</span>
+            )}
+            {personaLabel && (
+              <span className="profile-persona-badge">{personaLabel}</span>
+            )}
+          </div>
+
+          {/* Info */}
+          <div className="profile-info">
+            <p className="profile-username">{user?.username}</p>
+            <p className="profile-email">{user?.email}</p>
+          </div>
+
+          {/* Bio */}
+          <div className="profile-bio-block">
             {user?.bio ? (
               <p className="profile-bio">{user.bio}</p>
             ) : (
-              <p className="profile-bio" style={{ color: '#9ca3af', fontStyle: 'italic' }}>
-                No bio added yet.
-              </p>
+              <p className="profile-bio profile-bio-empty">No bio added yet.</p>
             )}
+          </div>
 
-            <p className="profile-meta">
-              Member since {new Date(user?.created_at).toLocaleDateString()}
-            </p>
+          <p className="profile-meta">
+            Member since {new Date(user?.created_at).toLocaleDateString()}
+          </p>
 
-            <button
-              className="btn-primary"
-              onClick={() => setEditing(true)}
-              style={{ alignSelf: 'flex-start' }}
-            >
-              Edit Profile
-            </button>
-          </>
-        ) : (
+          <button className="btn-primary profile-edit-btn" onClick={() => setEditing(true)}>
+            Edit Profile
+          </button>
+        </div>
+      ) : (
+        <div className="profile-card">
           <form className="profile-edit-form" onSubmit={handleSubmit} noValidate>
             {error && (
               <div className="auth-error" role="alert" aria-live="assertive">{error}</div>
@@ -136,7 +128,7 @@ const Profile = () => {
               onChange={(key) => setForm((prev) => ({ ...prev, avatar_seed: key }))}
             />
 
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <div className="profile-form-actions">
               <button type="submit" className="auth-btn" disabled={loading} aria-busy={loading}>
                 {loading ? 'Saving…' : 'Save Changes'}
               </button>
@@ -149,8 +141,8 @@ const Profile = () => {
               </button>
             </div>
           </form>
-        )}
-      </div>
+        </div>
+      )}
     </main>
   );
 };
