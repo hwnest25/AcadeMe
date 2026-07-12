@@ -47,7 +47,7 @@ app.use(session({
   store: new PgSession({
     pool: sessionPool,
     tableName: 'session',
-    createTableIfMissing: false,
+    createTableIfMissing: true,
   }),
   secret: process.env.SESSION_SECRET,
   resave: false,
