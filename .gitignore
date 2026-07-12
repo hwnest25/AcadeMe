@@ -16,10 +16,6 @@ dist-ssr
 .env
 server/.env
 
-# Project context files (local only)
-*_Context.md
-.claude/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
